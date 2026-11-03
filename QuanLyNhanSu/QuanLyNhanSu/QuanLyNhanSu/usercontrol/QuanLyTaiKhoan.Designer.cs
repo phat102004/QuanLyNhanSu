@@ -281,6 +281,7 @@
             grpInput.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
+            Load += QuanLyTaiKhoan_Load;
         }
 
         #endregion

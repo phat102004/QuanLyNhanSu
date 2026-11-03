@@ -263,6 +263,13 @@ namespace QuanLyNhanSu
             {
                 switch (btn.Name)
                 {
+                    case "btnHeThong":
+                        uc = new HeThong(
+                            this.userID,    
+                            this.userName,
+                            this.userQuyen
+                        );
+                        break;
                     case "btnThemNhanVien": uc = new ThemNhanVien(); break;
                     case "btnQuanLyNhanVien": uc = new QuanLyNhanVien(0); break;
                     case "btnPhanCongCongViec": uc = new PhanCong(0); break;
@@ -271,7 +278,8 @@ namespace QuanLyNhanSu
                     case "btnQuanLyBangLuong": uc = new BaoCaoPhanTich(); break;
                     case "btnQuanLyPhongBan": uc = new Uc_phongBan(); break;
                     case "btnQuanLyTrinhDo":uc = new TrinhDo(); break;
-                    
+                    case "btnBaoCao": uc = new ChucVu(); break;
+
                     case "btnTrinhDo": uc = new TrinhDo(); break;
                     case "btnChayBangLuong": uc = new BangLuong(); break;
                     case "btnTinhLuong": uc = new TinhLuong(); break;

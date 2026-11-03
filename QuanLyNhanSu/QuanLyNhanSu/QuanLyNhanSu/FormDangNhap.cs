@@ -108,7 +108,7 @@ namespace QuanLyNhanSu
         private void FormDangNhap_Load(object sender, EventArgs e)
         {
             // Thay đổi chuỗi kết nối của bạn nếu cần
-            string chuoiKN = @"Data Source=LAPTOP-MK554FA4;Initial Catalog=QuanLyNhanVienMain;Integrated Security=True;Trust Server Certificate=True";
+            string chuoiKN = @"Data Source=LAPTOP-MK554FA4;Initial Catalog=QuanLyNhanVien;Integrated Security=True;Trust Server Certificate=True";
             ketNoi = new SqlConnection(chuoiKN);
             TxtUsername.Focus(); // Thiết lập focus vào ô Username khi Form được tải
         }

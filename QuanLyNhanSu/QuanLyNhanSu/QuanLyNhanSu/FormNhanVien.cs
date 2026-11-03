@@ -153,7 +153,7 @@ namespace QuanLyNhanSu
                 switch (btn.Name)
                 {
                     case "btnHoSoCaNhan":
-                        uc = new QuanLyNhanVien(idToPass);
+                        uc = new QuanLyNhanVien(idToPass, this.userQuyen);
                         break;
                     case "btnLuongCaNhan":
                         uc = new BangLuong(idToPass);

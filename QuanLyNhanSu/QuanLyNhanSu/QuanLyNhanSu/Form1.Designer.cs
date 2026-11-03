@@ -24,516 +24,489 @@
 
         private void InitializeComponent()
         {
-            // ⭐ KHAI BÁO NÚT TÍNH LƯƠNG MỚI ⭐
-            this.btnTinhLuong = new System.Windows.Forms.Button();
-
-            // Khai báo các nút cá nhân mới
-            this.btnHoSoCaNhan = new System.Windows.Forms.Button();
-            this.btnLuongCaNhan = new System.Windows.Forms.Button();
-            this.btnCongViecCaNhan = new System.Windows.Forms.Button();
-
-            // Khai báo các control cũ
-            this.panelMenu = new System.Windows.Forms.Panel();
-            this.panelPhanCongSubmenu = new System.Windows.Forms.Panel();
-            this.btnBaoCaoPhanCong = new System.Windows.Forms.Button();
-            this.btnPhanCongCongViec = new System.Windows.Forms.Button();
-            this.btnPhanCong = new System.Windows.Forms.Button();
-            this.btnBaoCao = new System.Windows.Forms.Button();
-            this.panelLuongSubmenu = new System.Windows.Forms.Panel();
-            this.btnQuanLyBangLuong = new System.Windows.Forms.Button();
-            this.btnChayBangLuong = new System.Windows.Forms.Button();
-            this.btnLuong = new System.Windows.Forms.Button();
-            this.panelHoSoSubmenu = new System.Windows.Forms.Panel();
-            this.btnTrinhDo = new System.Windows.Forms.Button();
-            this.btnQuanLyPhongBan = new System.Windows.Forms.Button();
-            this.btnQuanLyNhanVien = new System.Windows.Forms.Button();
-            this.btnThemNhanVien = new System.Windows.Forms.Button();
-            this.btnHoSo = new System.Windows.Forms.Button();
-            this.btnHeThong = new System.Windows.Forms.Button();
-            this.panelContent = new System.Windows.Forms.Panel();
-
-            this.panelMenu.SuspendLayout();
-            this.panelPhanCongSubmenu.SuspendLayout();
-            this.panelLuongSubmenu.SuspendLayout();
-            this.panelHoSoSubmenu.SuspendLayout();
-            this.SuspendLayout();
-
+            btnTinhLuong = new Button();
+            btnHoSoCaNhan = new Button();
+            btnLuongCaNhan = new Button();
+            btnCongViecCaNhan = new Button();
+            panelMenu = new Panel();
+            panelPhanCongSubmenu = new Panel();
+            btnBaoCaoPhanCong = new Button();
+            btnPhanCongCongViec = new Button();
+            btnPhanCong = new Button();
+            btnChucVu = new Button();
+            panelLuongSubmenu = new Panel();
+            btnQuanLyBangLuong = new Button();
+            btnChayBangLuong = new Button();
+            btnLuong = new Button();
+            panelHoSoSubmenu = new Panel();
+            btnTrinhDo = new Button();
+            btnQuanLyPhongBan = new Button();
+            btnQuanLyNhanVien = new Button();
+            btnThemNhanVien = new Button();
+            btnHoSo = new Button();
+            btnHeThong = new Button();
+            panelContent = new Panel();
+            panelMenu.SuspendLayout();
+            panelPhanCongSubmenu.SuspendLayout();
+            panelLuongSubmenu.SuspendLayout();
+            panelHoSoSubmenu.SuspendLayout();
+            SuspendLayout();
             // 
-            // panelMenu
+            // btnTinhLuong
             // 
-            this.panelMenu.AutoScroll = true;
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-
-            // Đã thêm các nút cá nhân mới vào đây
-            this.panelMenu.Controls.Add(this.btnCongViecCaNhan);
-            this.panelMenu.Controls.Add(this.btnLuongCaNhan);
-            this.panelMenu.Controls.Add(this.btnHoSoCaNhan);
-
-            // Các nút cũ được giữ lại
-            this.panelMenu.Controls.Add(this.panelPhanCongSubmenu);
-            this.panelMenu.Controls.Add(this.btnPhanCong);
-            this.panelMenu.Controls.Add(this.btnBaoCao);
-            this.panelMenu.Controls.Add(this.panelLuongSubmenu);
-            this.panelMenu.Controls.Add(this.btnLuong);
-            this.panelMenu.Controls.Add(this.panelHoSoSubmenu);
-            this.panelMenu.Controls.Add(this.btnHoSo);
-            this.panelMenu.Controls.Add(this.btnHeThong);
-            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(406, 1627);
-            this.panelMenu.TabIndex = 0;
-
-            // --- CÁC NÚT CÁ NHÂN (Được thêm mới vào Menu chính) ---
-            // 
-            // btnCongViecCaNhan (Nút cuối cùng của NV)
-            // 
-            this.btnCongViecCaNhan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCongViecCaNhan.FlatAppearance.BorderSize = 0;
-            this.btnCongViecCaNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCongViecCaNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCongViecCaNhan.ForeColor = System.Drawing.Color.White;
-            this.btnCongViecCaNhan.Location = new System.Drawing.Point(0, 1040); // Điều chỉnh vị trí sau Submenu Phân Công
-            this.btnCongViecCaNhan.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnCongViecCaNhan.Name = "btnCongViecCaNhan";
-            this.btnCongViecCaNhan.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnCongViecCaNhan.Size = new System.Drawing.Size(406, 80);
-            this.btnCongViecCaNhan.TabIndex = 14;
-            this.btnCongViecCaNhan.Tag = "NhanVien,TruongPhong"; // Nhân viên và Trưởng phòng đều xem được
-            this.btnCongViecCaNhan.Text = "📝 Công Việc Của Tôi";
-            this.btnCongViecCaNhan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCongViecCaNhan.UseVisualStyleBackColor = true;
-            this.btnCongViecCaNhan.Click += new System.EventHandler(this.BtnMenuCaNhan_Click);
-
-            // 
-            // btnLuongCaNhan
-            // 
-            this.btnLuongCaNhan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnLuongCaNhan.FlatAppearance.BorderSize = 0;
-            this.btnLuongCaNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLuongCaNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuongCaNhan.ForeColor = System.Drawing.Color.White;
-            this.btnLuongCaNhan.Location = new System.Drawing.Point(0, 1120); // Điều chỉnh vị trí sau btnCongViecCaNhan
-            this.btnLuongCaNhan.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnLuongCaNhan.Name = "btnLuongCaNhan";
-            this.btnLuongCaNhan.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnLuongCaNhan.Size = new System.Drawing.Size(406, 80);
-            this.btnLuongCaNhan.TabIndex = 13;
-            this.btnLuongCaNhan.Tag = "NhanVien,TruongPhong,KeToan";
-            this.btnLuongCaNhan.Text = "💰 Lương Của Tôi";
-            this.btnLuongCaNhan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuongCaNhan.UseVisualStyleBackColor = true;
-            this.btnLuongCaNhan.Click += new System.EventHandler(this.BtnMenuCaNhan_Click);
-
+            btnTinhLuong.BackColor = Color.FromArgb(17, 24, 39);
+            btnTinhLuong.Dock = DockStyle.Top;
+            btnTinhLuong.FlatAppearance.BorderSize = 0;
+            btnTinhLuong.FlatAppearance.MouseOverBackColor = Color.FromArgb(55, 65, 81);
+            btnTinhLuong.FlatStyle = FlatStyle.Flat;
+            btnTinhLuong.Font = new Font("Segoe UI", 9.5F);
+            btnTinhLuong.ForeColor = Color.FromArgb(209, 213, 219);
+            btnTinhLuong.Location = new Point(0, 128);
+            btnTinhLuong.Margin = new Padding(0);
+            btnTinhLuong.Name = "btnTinhLuong";
+            btnTinhLuong.Padding = new Padding(55, 0, 10, 0);
+            btnTinhLuong.Size = new Size(406, 64);
+            btnTinhLuong.TabIndex = 2;
+            btnTinhLuong.Tag = "Admin,KeToan";
+            btnTinhLuong.Text = "Tính Lương & Chấm Công";
+            btnTinhLuong.TextAlign = ContentAlignment.MiddleLeft;
+            btnTinhLuong.UseVisualStyleBackColor = false;
+            btnTinhLuong.Click += BtnSubmenu_Click;
             // 
             // btnHoSoCaNhan
             // 
-            this.btnHoSoCaNhan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHoSoCaNhan.FlatAppearance.BorderSize = 0;
-            this.btnHoSoCaNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHoSoCaNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHoSoCaNhan.ForeColor = System.Drawing.Color.White;
-            this.btnHoSoCaNhan.Location = new System.Drawing.Point(0, 1200); // Điều chỉnh vị trí sau btnLuongCaNhan
-            this.btnHoSoCaNhan.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnHoSoCaNhan.Name = "btnHoSoCaNhan";
-            this.btnHoSoCaNhan.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnHoSoCaNhan.Size = new System.Drawing.Size(406, 80);
-            this.btnHoSoCaNhan.TabIndex = 12;
-            this.btnHoSoCaNhan.Tag = "NhanVien,TruongPhong,KeToan";
-            this.btnHoSoCaNhan.Text = "🧑 Hồ Sơ Của Tôi";
-            this.btnHoSoCaNhan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHoSoCaNhan.UseVisualStyleBackColor = true;
-            this.btnHoSoCaNhan.Click += new System.EventHandler(this.BtnMenuCaNhan_Click);
-
-            // --- CÁC NÚT VÀ SUBMENU CŨ (Giữ nguyên cấu trúc) ---
-
+            btnHoSoCaNhan.BackColor = Color.FromArgb(31, 41, 55);
+            btnHoSoCaNhan.Dock = DockStyle.Top;
+            btnHoSoCaNhan.FlatAppearance.BorderSize = 0;
+            btnHoSoCaNhan.FlatAppearance.MouseDownBackColor = Color.FromArgb(75, 85, 99);
+            btnHoSoCaNhan.FlatAppearance.MouseOverBackColor = Color.FromArgb(55, 65, 81);
+            btnHoSoCaNhan.FlatStyle = FlatStyle.Flat;
+            btnHoSoCaNhan.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnHoSoCaNhan.ForeColor = Color.FromArgb(243, 244, 246);
+            btnHoSoCaNhan.Location = new Point(0, 936);
+            btnHoSoCaNhan.Margin = new Padding(0);
+            btnHoSoCaNhan.Name = "btnHoSoCaNhan";
+            btnHoSoCaNhan.Padding = new Padding(24, 0, 0, 0);
+            btnHoSoCaNhan.Size = new Size(406, 72);
+            btnHoSoCaNhan.TabIndex = 12;
+            btnHoSoCaNhan.Tag = "NhanVien,TruongPhong,KeToan";
+            btnHoSoCaNhan.Text = "👤  Hồ Sơ Của Tôi";
+            btnHoSoCaNhan.TextAlign = ContentAlignment.MiddleLeft;
+            btnHoSoCaNhan.UseVisualStyleBackColor = false;
+            btnHoSoCaNhan.Click += BtnMenuCaNhan_Click;
+            // 
+            // btnLuongCaNhan
+            // 
+            btnLuongCaNhan.BackColor = Color.FromArgb(31, 41, 55);
+            btnLuongCaNhan.Dock = DockStyle.Top;
+            btnLuongCaNhan.FlatAppearance.BorderSize = 0;
+            btnLuongCaNhan.FlatAppearance.MouseDownBackColor = Color.FromArgb(75, 85, 99);
+            btnLuongCaNhan.FlatAppearance.MouseOverBackColor = Color.FromArgb(55, 65, 81);
+            btnLuongCaNhan.FlatStyle = FlatStyle.Flat;
+            btnLuongCaNhan.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnLuongCaNhan.ForeColor = Color.FromArgb(243, 244, 246);
+            btnLuongCaNhan.Location = new Point(0, 1008);
+            btnLuongCaNhan.Margin = new Padding(0);
+            btnLuongCaNhan.Name = "btnLuongCaNhan";
+            btnLuongCaNhan.Padding = new Padding(24, 0, 0, 0);
+            btnLuongCaNhan.Size = new Size(406, 72);
+            btnLuongCaNhan.TabIndex = 13;
+            btnLuongCaNhan.Tag = "NhanVien,TruongPhong,KeToan";
+            btnLuongCaNhan.Text = "💰  Lương Của Tôi";
+            btnLuongCaNhan.TextAlign = ContentAlignment.MiddleLeft;
+            btnLuongCaNhan.UseVisualStyleBackColor = false;
+            btnLuongCaNhan.Click += BtnMenuCaNhan_Click;
+            // 
+            // btnCongViecCaNhan
+            // 
+            btnCongViecCaNhan.BackColor = Color.FromArgb(31, 41, 55);
+            btnCongViecCaNhan.Dock = DockStyle.Top;
+            btnCongViecCaNhan.FlatAppearance.BorderSize = 0;
+            btnCongViecCaNhan.FlatAppearance.MouseDownBackColor = Color.FromArgb(75, 85, 99);
+            btnCongViecCaNhan.FlatAppearance.MouseOverBackColor = Color.FromArgb(55, 65, 81);
+            btnCongViecCaNhan.FlatStyle = FlatStyle.Flat;
+            btnCongViecCaNhan.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnCongViecCaNhan.ForeColor = Color.FromArgb(243, 244, 246);
+            btnCongViecCaNhan.Location = new Point(0, 1080);
+            btnCongViecCaNhan.Margin = new Padding(0);
+            btnCongViecCaNhan.Name = "btnCongViecCaNhan";
+            btnCongViecCaNhan.Padding = new Padding(24, 0, 0, 0);
+            btnCongViecCaNhan.Size = new Size(406, 72);
+            btnCongViecCaNhan.TabIndex = 14;
+            btnCongViecCaNhan.Tag = "NhanVien,TruongPhong";
+            btnCongViecCaNhan.Text = "📝  Công Việc Của Tôi";
+            btnCongViecCaNhan.TextAlign = ContentAlignment.MiddleLeft;
+            btnCongViecCaNhan.UseVisualStyleBackColor = false;
+            btnCongViecCaNhan.Click += BtnMenuCaNhan_Click;
+            // 
+            // panelMenu
+            // 
+            panelMenu.AutoScroll = true;
+            panelMenu.BackColor = Color.FromArgb(31, 41, 55);
+            panelMenu.Controls.Add(btnCongViecCaNhan);
+            panelMenu.Controls.Add(btnLuongCaNhan);
+            panelMenu.Controls.Add(btnHoSoCaNhan);
+            panelMenu.Controls.Add(panelPhanCongSubmenu);
+            panelMenu.Controls.Add(btnPhanCong);
+            panelMenu.Controls.Add(btnChucVu);
+            panelMenu.Controls.Add(panelLuongSubmenu);
+            panelMenu.Controls.Add(btnLuong);
+            panelMenu.Controls.Add(panelHoSoSubmenu);
+            panelMenu.Controls.Add(btnHoSo);
+            panelMenu.Controls.Add(btnHeThong);
+            panelMenu.Dock = DockStyle.Left;
+            panelMenu.Location = new Point(0, 0);
+            panelMenu.Margin = new Padding(0);
+            panelMenu.Name = "panelMenu";
+            panelMenu.Size = new Size(406, 1627);
+            panelMenu.TabIndex = 0;
             // 
             // panelPhanCongSubmenu
             // 
-            this.panelPhanCongSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.panelPhanCongSubmenu.Controls.Add(this.btnBaoCaoPhanCong);
-            this.panelPhanCongSubmenu.Controls.Add(this.btnPhanCongCongViec);
-            this.panelPhanCongSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelPhanCongSubmenu.Location = new System.Drawing.Point(0, 880);
-            this.panelPhanCongSubmenu.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.panelPhanCongSubmenu.Name = "panelPhanCongSubmenu";
-            this.panelPhanCongSubmenu.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.panelPhanCongSubmenu.Size = new System.Drawing.Size(406, 160);
-            this.panelPhanCongSubmenu.TabIndex = 11;
-
+            panelPhanCongSubmenu.BackColor = Color.FromArgb(17, 24, 39);
+            panelPhanCongSubmenu.Controls.Add(btnBaoCaoPhanCong);
+            panelPhanCongSubmenu.Controls.Add(btnPhanCongCongViec);
+            panelPhanCongSubmenu.Dock = DockStyle.Top;
+            panelPhanCongSubmenu.Location = new Point(0, 808);
+            panelPhanCongSubmenu.Margin = new Padding(0);
+            panelPhanCongSubmenu.Name = "panelPhanCongSubmenu";
+            panelPhanCongSubmenu.Size = new Size(406, 128);
+            panelPhanCongSubmenu.TabIndex = 11;
             // 
             // btnBaoCaoPhanCong
             // 
-            this.btnBaoCaoPhanCong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.btnBaoCaoPhanCong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnBaoCaoPhanCong.FlatAppearance.BorderSize = 0;
-            this.btnBaoCaoPhanCong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBaoCaoPhanCong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBaoCaoPhanCong.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnBaoCaoPhanCong.Location = new System.Drawing.Point(16, 80);
-            this.btnBaoCaoPhanCong.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnBaoCaoPhanCong.Name = "btnBaoCaoPhanCong";
-            this.btnBaoCaoPhanCong.Padding = new System.Windows.Forms.Padding(49, 0, 0, 0);
-            this.btnBaoCaoPhanCong.Size = new System.Drawing.Size(390, 80);
-            this.btnBaoCaoPhanCong.TabIndex = 1;
-            this.btnBaoCaoPhanCong.Tag = "Admin,TruongPhong,NhanVien";
-            this.btnBaoCaoPhanCong.Text = "Bảng Phân Công (Quản lý)";
-            this.btnBaoCaoPhanCong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBaoCaoPhanCong.UseVisualStyleBackColor = false;
-            this.btnBaoCaoPhanCong.Click += new System.EventHandler(this.BtnSubmenu_Click);
-
+            btnBaoCaoPhanCong.BackColor = Color.FromArgb(17, 24, 39);
+            btnBaoCaoPhanCong.Dock = DockStyle.Top;
+            btnBaoCaoPhanCong.FlatAppearance.BorderSize = 0;
+            btnBaoCaoPhanCong.FlatAppearance.MouseOverBackColor = Color.FromArgb(55, 65, 81);
+            btnBaoCaoPhanCong.FlatStyle = FlatStyle.Flat;
+            btnBaoCaoPhanCong.Font = new Font("Segoe UI", 9.5F);
+            btnBaoCaoPhanCong.ForeColor = Color.FromArgb(209, 213, 219);
+            btnBaoCaoPhanCong.Location = new Point(0, 64);
+            btnBaoCaoPhanCong.Margin = new Padding(0);
+            btnBaoCaoPhanCong.Name = "btnBaoCaoPhanCong";
+            btnBaoCaoPhanCong.Padding = new Padding(55, 0, 10, 0);
+            btnBaoCaoPhanCong.Size = new Size(406, 64);
+            btnBaoCaoPhanCong.TabIndex = 1;
+            btnBaoCaoPhanCong.Tag = "Admin,TruongPhong,NhanVien";
+            btnBaoCaoPhanCong.Text = "Bảng Phân Công";
+            btnBaoCaoPhanCong.TextAlign = ContentAlignment.MiddleLeft;
+            btnBaoCaoPhanCong.UseVisualStyleBackColor = false;
+            btnBaoCaoPhanCong.Click += BtnSubmenu_Click;
             // 
             // btnPhanCongCongViec
             // 
-            this.btnPhanCongCongViec.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.btnPhanCongCongViec.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPhanCongCongViec.FlatAppearance.BorderSize = 0;
-            this.btnPhanCongCongViec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPhanCongCongViec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPhanCongCongViec.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPhanCongCongViec.Location = new System.Drawing.Point(16, 0);
-            this.btnPhanCongCongViec.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnPhanCongCongViec.Name = "btnPhanCongCongViec";
-            this.btnPhanCongCongViec.Padding = new System.Windows.Forms.Padding(49, 0, 0, 0);
-            this.btnPhanCongCongViec.Size = new System.Drawing.Size(390, 80);
-            this.btnPhanCongCongViec.TabIndex = 0;
-            this.btnPhanCongCongViec.Tag = "Admin,TruongPhong";
-            this.btnPhanCongCongViec.Text = "Phân Công Công Việc";
-            this.btnPhanCongCongViec.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPhanCongCongViec.UseVisualStyleBackColor = false;
-            this.btnPhanCongCongViec.Click += new System.EventHandler(this.BtnSubmenu_Click);
-
+            btnPhanCongCongViec.BackColor = Color.FromArgb(17, 24, 39);
+            btnPhanCongCongViec.Dock = DockStyle.Top;
+            btnPhanCongCongViec.FlatAppearance.BorderSize = 0;
+            btnPhanCongCongViec.FlatAppearance.MouseOverBackColor = Color.FromArgb(55, 65, 81);
+            btnPhanCongCongViec.FlatStyle = FlatStyle.Flat;
+            btnPhanCongCongViec.Font = new Font("Segoe UI", 9.5F);
+            btnPhanCongCongViec.ForeColor = Color.FromArgb(209, 213, 219);
+            btnPhanCongCongViec.Location = new Point(0, 0);
+            btnPhanCongCongViec.Margin = new Padding(0);
+            btnPhanCongCongViec.Name = "btnPhanCongCongViec";
+            btnPhanCongCongViec.Padding = new Padding(55, 0, 10, 0);
+            btnPhanCongCongViec.Size = new Size(406, 64);
+            btnPhanCongCongViec.TabIndex = 0;
+            btnPhanCongCongViec.Tag = "Admin,TruongPhong";
+            btnPhanCongCongViec.Text = "Phân Công Công Việc";
+            btnPhanCongCongViec.TextAlign = ContentAlignment.MiddleLeft;
+            btnPhanCongCongViec.UseVisualStyleBackColor = false;
+            btnPhanCongCongViec.Click += BtnSubmenu_Click;
             // 
             // btnPhanCong
             // 
-            this.btnPhanCong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPhanCong.FlatAppearance.BorderSize = 0;
-            this.btnPhanCong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPhanCong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPhanCong.ForeColor = System.Drawing.Color.White;
-            this.btnPhanCong.Location = new System.Drawing.Point(0, 800);
-            this.btnPhanCong.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnPhanCong.Name = "btnPhanCong";
-            this.btnPhanCong.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnPhanCong.Size = new System.Drawing.Size(406, 80);
-            this.btnPhanCong.TabIndex = 10;
-            this.btnPhanCong.Tag = "Admin,TruongPhong"; // Nút cha, không cần cho NhanVien
-            this.btnPhanCong.Text = "📋 Quản Lý Phân Công";
-            this.btnPhanCong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPhanCong.UseVisualStyleBackColor = true;
-            this.btnPhanCong.Click += new System.EventHandler(this.BtnMenu_Click);
-
+            btnPhanCong.BackColor = Color.FromArgb(31, 41, 55);
+            btnPhanCong.Dock = DockStyle.Top;
+            btnPhanCong.FlatAppearance.BorderSize = 0;
+            btnPhanCong.FlatAppearance.MouseDownBackColor = Color.FromArgb(75, 85, 99);
+            btnPhanCong.FlatAppearance.MouseOverBackColor = Color.FromArgb(55, 65, 81);
+            btnPhanCong.FlatStyle = FlatStyle.Flat;
+            btnPhanCong.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnPhanCong.ForeColor = Color.FromArgb(243, 244, 246);
+            btnPhanCong.Location = new Point(0, 736);
+            btnPhanCong.Margin = new Padding(0);
+            btnPhanCong.Name = "btnPhanCong";
+            btnPhanCong.Padding = new Padding(24, 0, 0, 0);
+            btnPhanCong.Size = new Size(406, 72);
+            btnPhanCong.TabIndex = 10;
+            btnPhanCong.Tag = "Admin,TruongPhong";
+            btnPhanCong.Text = "📋  Quản Lý Phân Công";
+            btnPhanCong.TextAlign = ContentAlignment.MiddleLeft;
+            btnPhanCong.UseVisualStyleBackColor = false;
+            btnPhanCong.Click += BtnMenu_Click;
             // 
-            // btnBaoCao
+            // btnChucVu
             // 
-            this.btnBaoCao.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnBaoCao.FlatAppearance.BorderSize = 0;
-            this.btnBaoCao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBaoCao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBaoCao.ForeColor = System.Drawing.Color.White;
-            this.btnBaoCao.Location = new System.Drawing.Point(0, 720);
-            this.btnBaoCao.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnBaoCao.Name = "btnBaoCao";
-            this.btnBaoCao.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnBaoCao.Size = new System.Drawing.Size(406, 80);
-            this.btnBaoCao.TabIndex = 9;
-            this.btnBaoCao.Tag = "Admin,TruongPhong,KeToan";
-            this.btnBaoCao.Text = "📈 Báo Cáo Phân Tích";
-            this.btnBaoCao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBaoCao.UseVisualStyleBackColor = true;
-            this.btnBaoCao.Click += new System.EventHandler(this.BtnSubmenu_Click);
-
+            btnChucVu.BackColor = Color.FromArgb(31, 41, 55);
+            btnChucVu.Dock = DockStyle.Top;
+            btnChucVu.FlatAppearance.BorderSize = 0;
+            btnChucVu.FlatAppearance.MouseDownBackColor = Color.FromArgb(75, 85, 99);
+            btnChucVu.FlatAppearance.MouseOverBackColor = Color.FromArgb(55, 65, 81);
+            btnChucVu.FlatStyle = FlatStyle.Flat;
+            btnChucVu.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnChucVu.ForeColor = Color.FromArgb(243, 244, 246);
+            btnChucVu.Location = new Point(0, 664);
+            btnChucVu.Margin = new Padding(0);
+            btnChucVu.Name = "btnChucVu";
+            btnChucVu.Padding = new Padding(24, 0, 0, 0);
+            btnChucVu.Size = new Size(406, 72);
+            btnChucVu.TabIndex = 9;
+            btnChucVu.Tag = "Admin,TruongPhong,KeToan";
+            btnChucVu.Text = "▣  Quản Lý Chức Vụ";
+            btnChucVu.TextAlign = ContentAlignment.MiddleLeft;
+            btnChucVu.UseVisualStyleBackColor = false;
+            btnChucVu.Click += BtnSubmenu_Click;
             // 
             // panelLuongSubmenu
             // 
-            this.panelLuongSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-
-            // ⭐ ĐẢO NGƯỢC THỨ TỰ THÊM NÚT ĐỂ btnTinhLuong NẰM TRÊN CÙNG KHI DÙNG DockStyle.Top ⭐
-            // (Các nút thêm sau DockStyle.Top sẽ nằm ở vị trí cao hơn)
-            this.panelLuongSubmenu.Controls.Add(this.btnTinhLuong);         // 1. Tính Lương (Nằm trên cùng)
-            this.panelLuongSubmenu.Controls.Add(this.btnQuanLyBangLuong);   // 2. Quản Lý Bảng Lương
-            this.panelLuongSubmenu.Controls.Add(this.btnChayBangLuong);     // 3. Chạy Bảng Lương (Nằm dưới cùng)
-
-            this.panelLuongSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLuongSubmenu.Location = new System.Drawing.Point(0, 560);
-            this.panelLuongSubmenu.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.panelLuongSubmenu.Name = "panelLuongSubmenu";
-            this.panelLuongSubmenu.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.panelLuongSubmenu.Size = new System.Drawing.Size(406, 240); // 3 nút * 80px = 240px
-            this.panelLuongSubmenu.TabIndex = 8;
-
-            // ⭐ CẤU HÌNH NÚT TÍNH LƯƠNG MỚI ⭐
+            panelLuongSubmenu.BackColor = Color.FromArgb(17, 24, 39);
+            panelLuongSubmenu.Controls.Add(btnTinhLuong);
+            panelLuongSubmenu.Controls.Add(btnQuanLyBangLuong);
+            panelLuongSubmenu.Controls.Add(btnChayBangLuong);
+            panelLuongSubmenu.Dock = DockStyle.Top;
+            panelLuongSubmenu.Location = new Point(0, 472);
+            panelLuongSubmenu.Margin = new Padding(0);
+            panelLuongSubmenu.Name = "panelLuongSubmenu";
+            panelLuongSubmenu.Size = new Size(406, 192);
+            panelLuongSubmenu.TabIndex = 8;
             // 
-            // btnTinhLuong
+            // btnQuanLyBangLuong
             // 
-            this.btnTinhLuong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.btnTinhLuong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTinhLuong.FlatAppearance.BorderSize = 0;
-            this.btnTinhLuong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTinhLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTinhLuong.ForeColor = System.Drawing.Color.WhiteSmoke;
-            // Không cần đặt Location thủ công, Dock.Top sẽ tự tính
-            this.btnTinhLuong.Location = new System.Drawing.Point(16, 160); // Vị trí này sẽ là vị trí cao nhất (160)
-            this.btnTinhLuong.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnTinhLuong.Name = "btnTinhLuong";
-            this.btnTinhLuong.Padding = new System.Windows.Forms.Padding(49, 0, 0, 0);
-            this.btnTinhLuong.Size = new System.Drawing.Size(390, 80);
-            this.btnTinhLuong.TabIndex = 2;
-            this.btnTinhLuong.Tag = "Admin,KeToan";
-            this.btnTinhLuong.Text = "Tính Lương & Chấm Công";
-            this.btnTinhLuong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTinhLuong.UseVisualStyleBackColor = false;
-
-            // ⭐ GÁN SỰ KIỆN CLICK ĐÚNG CHO NÚT TÍNH LƯƠNG ⭐
-            this.btnTinhLuong.Click += new System.EventHandler(this.BtnSubmenu_Click);
-            // ⭐ CẤU HÌNH NÚT TÍNH LƯƠNG MỚI (Vị trí đầu tiên: Dock.Top, Location 0) ⭐
+            btnQuanLyBangLuong.BackColor = Color.FromArgb(17, 24, 39);
+            btnQuanLyBangLuong.Dock = DockStyle.Top;
+            btnQuanLyBangLuong.FlatAppearance.BorderSize = 0;
+            btnQuanLyBangLuong.FlatAppearance.MouseOverBackColor = Color.FromArgb(55, 65, 81);
+            btnQuanLyBangLuong.FlatStyle = FlatStyle.Flat;
+            btnQuanLyBangLuong.Font = new Font("Segoe UI", 9.5F);
+            btnQuanLyBangLuong.ForeColor = Color.FromArgb(209, 213, 219);
+            btnQuanLyBangLuong.Location = new Point(0, 64);
+            btnQuanLyBangLuong.Margin = new Padding(0);
+            btnQuanLyBangLuong.Name = "btnQuanLyBangLuong";
+            btnQuanLyBangLuong.Padding = new Padding(55, 0, 10, 0);
+            btnQuanLyBangLuong.Size = new Size(406, 64);
+            btnQuanLyBangLuong.TabIndex = 1;
+            btnQuanLyBangLuong.Tag = "Admin,KeToan";
+            btnQuanLyBangLuong.Text = "Quản Lý Bảng Lương";
+            btnQuanLyBangLuong.TextAlign = ContentAlignment.MiddleLeft;
+            btnQuanLyBangLuong.UseVisualStyleBackColor = false;
+            btnQuanLyBangLuong.Click += BtnSubmenu_Click;
             // 
-            // btnTinhLuong
+            // btnChayBangLuong
             // 
-            this.btnTinhLuong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.btnTinhLuong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTinhLuong.FlatAppearance.BorderSize = 0;
-            this.btnTinhLuong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTinhLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTinhLuong.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnTinhLuong.Location = new System.Drawing.Point(16, 160); // Vị trí này sẽ nằm trên cùng vì Controls được thêm theo thứ tự ngược lại (bottom-up)
-            this.btnTinhLuong.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnTinhLuong.Name = "btnTinhLuong";
-            this.btnTinhLuong.Padding = new System.Windows.Forms.Padding(49, 0, 0, 0);
-            this.btnTinhLuong.Size = new System.Drawing.Size(390, 80);
-            this.btnTinhLuong.TabIndex = 2; // Gán TabIndex khác
-            this.btnTinhLuong.Tag = "Admin,KeToan";
-            this.btnTinhLuong.Text = "Tính Lương & Chấm Công";
-            this.btnTinhLuong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTinhLuong.UseVisualStyleBackColor = false;
-            this.btnTinhLuong.Click += new System.EventHandler(this.BtnSubmenu_Click);
-
-            // 
-            // btnQuanLyBangLuong (Vị trí đã được điều chỉnh)
-            // 
-            this.btnQuanLyBangLuong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.btnQuanLyBangLuong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnQuanLyBangLuong.FlatAppearance.BorderSize = 0;
-            this.btnQuanLyBangLuong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuanLyBangLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuanLyBangLuong.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnQuanLyBangLuong.Location = new System.Drawing.Point(16, 80); // Vị trí 80 (Thứ hai)
-            this.btnQuanLyBangLuong.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnQuanLyBangLuong.Name = "btnQuanLyBangLuong";
-            this.btnQuanLyBangLuong.Padding = new System.Windows.Forms.Padding(49, 0, 0, 0);
-            this.btnQuanLyBangLuong.Size = new System.Drawing.Size(390, 80);
-            this.btnQuanLyBangLuong.TabIndex = 1;
-            this.btnQuanLyBangLuong.Tag = "Admin,KeToan";
-            this.btnQuanLyBangLuong.Text = "Quản Lý Bảng Lương (Chung)";
-            this.btnQuanLyBangLuong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuanLyBangLuong.UseVisualStyleBackColor = false;
-            this.btnQuanLyBangLuong.Click += new System.EventHandler(this.BtnSubmenu_Click);
-
-            // 
-            // btnChayBangLuong (Vị trí đã được điều chỉnh)
-            // 
-            this.btnChayBangLuong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.btnChayBangLuong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnChayBangLuong.FlatAppearance.BorderSize = 0;
-            this.btnChayBangLuong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChayBangLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChayBangLuong.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnChayBangLuong.Location = new System.Drawing.Point(16, 0); // Vị trí 0 (Thứ ba)
-            this.btnChayBangLuong.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnChayBangLuong.Name = "btnChayBangLuong";
-            this.btnChayBangLuong.Padding = new System.Windows.Forms.Padding(49, 0, 0, 0);
-            this.btnChayBangLuong.Size = new System.Drawing.Size(390, 80);
-            this.btnChayBangLuong.TabIndex = 0;
-            this.btnChayBangLuong.Tag = "Admin,KeToan";
-            this.btnChayBangLuong.Text = "Chạy Bảng Lương";
-            this.btnChayBangLuong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChayBangLuong.UseVisualStyleBackColor = false;
-            this.btnChayBangLuong.Click += new System.EventHandler(this.BtnSubmenu_Click);
-
+            btnChayBangLuong.BackColor = Color.FromArgb(17, 24, 39);
+            btnChayBangLuong.Dock = DockStyle.Top;
+            btnChayBangLuong.FlatAppearance.BorderSize = 0;
+            btnChayBangLuong.FlatAppearance.MouseOverBackColor = Color.FromArgb(55, 65, 81);
+            btnChayBangLuong.FlatStyle = FlatStyle.Flat;
+            btnChayBangLuong.Font = new Font("Segoe UI", 9.5F);
+            btnChayBangLuong.ForeColor = Color.FromArgb(209, 213, 219);
+            btnChayBangLuong.Location = new Point(0, 0);
+            btnChayBangLuong.Margin = new Padding(0);
+            btnChayBangLuong.Name = "btnChayBangLuong";
+            btnChayBangLuong.Padding = new Padding(55, 0, 10, 0);
+            btnChayBangLuong.Size = new Size(406, 64);
+            btnChayBangLuong.TabIndex = 0;
+            btnChayBangLuong.Tag = "Admin,KeToan";
+            btnChayBangLuong.Text = "Chạy Bảng Lương";
+            btnChayBangLuong.TextAlign = ContentAlignment.MiddleLeft;
+            btnChayBangLuong.UseVisualStyleBackColor = false;
+            btnChayBangLuong.Click += BtnSubmenu_Click;
             // 
             // btnLuong
             // 
-            this.btnLuong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnLuong.FlatAppearance.BorderSize = 0;
-            this.btnLuong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuong.ForeColor = System.Drawing.Color.White;
-            this.btnLuong.Location = new System.Drawing.Point(0, 480);
-            this.btnLuong.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnLuong.Name = "btnLuong";
-            this.btnLuong.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnLuong.Size = new System.Drawing.Size(406, 80);
-            this.btnLuong.TabIndex = 7;
-            this.btnLuong.Tag = "Admin,KeToan"; // Nút cha, không cần cho NhanVien
-            this.btnLuong.Text = "💸 Quản Lý Lương";
-            this.btnLuong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuong.UseVisualStyleBackColor = true;
-            this.btnLuong.Click += new System.EventHandler(this.BtnMenu_Click);
-
-            // ... (Giữ nguyên các Panel HoSo, Nút HoSo, Nút HeThong và panelContent) ...
-
+            btnLuong.BackColor = Color.FromArgb(31, 41, 55);
+            btnLuong.Dock = DockStyle.Top;
+            btnLuong.FlatAppearance.BorderSize = 0;
+            btnLuong.FlatAppearance.MouseDownBackColor = Color.FromArgb(75, 85, 99);
+            btnLuong.FlatAppearance.MouseOverBackColor = Color.FromArgb(55, 65, 81);
+            btnLuong.FlatStyle = FlatStyle.Flat;
+            btnLuong.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnLuong.ForeColor = Color.FromArgb(243, 244, 246);
+            btnLuong.Location = new Point(0, 400);
+            btnLuong.Margin = new Padding(0);
+            btnLuong.Name = "btnLuong";
+            btnLuong.Padding = new Padding(24, 0, 0, 0);
+            btnLuong.Size = new Size(406, 72);
+            btnLuong.TabIndex = 7;
+            btnLuong.Tag = "Admin,KeToan";
+            btnLuong.Text = "💰  Quản Lý Lương";
+            btnLuong.TextAlign = ContentAlignment.MiddleLeft;
+            btnLuong.UseVisualStyleBackColor = false;
+            btnLuong.Click += BtnMenu_Click;
             // 
             // panelHoSoSubmenu
             // 
-            this.panelHoSoSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.panelHoSoSubmenu.Controls.Add(this.btnTrinhDo);
-            this.panelHoSoSubmenu.Controls.Add(this.btnQuanLyPhongBan);
-            this.panelHoSoSubmenu.Controls.Add(this.btnQuanLyNhanVien);
-            this.panelHoSoSubmenu.Controls.Add(this.btnThemNhanVien);
-            this.panelHoSoSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHoSoSubmenu.Location = new System.Drawing.Point(0, 160);
-            this.panelHoSoSubmenu.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.panelHoSoSubmenu.Name = "panelHoSoSubmenu";
-            this.panelHoSoSubmenu.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.panelHoSoSubmenu.Size = new System.Drawing.Size(406, 320);
-            this.panelHoSoSubmenu.TabIndex = 6;
+            panelHoSoSubmenu.BackColor = Color.FromArgb(17, 24, 39);
+            panelHoSoSubmenu.Controls.Add(btnTrinhDo);
+            panelHoSoSubmenu.Controls.Add(btnQuanLyPhongBan);
+            panelHoSoSubmenu.Controls.Add(btnQuanLyNhanVien);
+            panelHoSoSubmenu.Controls.Add(btnThemNhanVien);
+            panelHoSoSubmenu.Dock = DockStyle.Top;
+            panelHoSoSubmenu.Location = new Point(0, 144);
+            panelHoSoSubmenu.Margin = new Padding(0);
+            panelHoSoSubmenu.Name = "panelHoSoSubmenu";
+            panelHoSoSubmenu.Size = new Size(406, 256);
+            panelHoSoSubmenu.TabIndex = 6;
             // 
             // btnTrinhDo
             // 
-            this.btnTrinhDo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.btnTrinhDo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTrinhDo.FlatAppearance.BorderSize = 0;
-            this.btnTrinhDo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTrinhDo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTrinhDo.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnTrinhDo.Location = new System.Drawing.Point(16, 240);
-            this.btnTrinhDo.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnTrinhDo.Name = "btnTrinhDo";
-            this.btnTrinhDo.Padding = new System.Windows.Forms.Padding(49, 0, 0, 0);
-            this.btnTrinhDo.Size = new System.Drawing.Size(390, 80);
-            this.btnTrinhDo.TabIndex = 3;
-            this.btnTrinhDo.Tag = "Admin"; // Trưởng phòng chỉ quản lý nhân viên, không quản lý Trình độ/Phòng ban
-            this.btnTrinhDo.Text = "Quản Lý Trình Độ";
-            this.btnTrinhDo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTrinhDo.UseVisualStyleBackColor = false;
-            this.btnTrinhDo.Click += new System.EventHandler(this.BtnSubmenu_Click);
+            btnTrinhDo.BackColor = Color.FromArgb(17, 24, 39);
+            btnTrinhDo.Dock = DockStyle.Top;
+            btnTrinhDo.FlatAppearance.BorderSize = 0;
+            btnTrinhDo.FlatAppearance.MouseOverBackColor = Color.FromArgb(55, 65, 81);
+            btnTrinhDo.FlatStyle = FlatStyle.Flat;
+            btnTrinhDo.Font = new Font("Segoe UI", 9.5F);
+            btnTrinhDo.ForeColor = Color.FromArgb(209, 213, 219);
+            btnTrinhDo.Location = new Point(0, 192);
+            btnTrinhDo.Margin = new Padding(0);
+            btnTrinhDo.Name = "btnTrinhDo";
+            btnTrinhDo.Padding = new Padding(55, 0, 10, 0);
+            btnTrinhDo.Size = new Size(406, 64);
+            btnTrinhDo.TabIndex = 3;
+            btnTrinhDo.Tag = "Admin";
+            btnTrinhDo.Text = "Quản Lý Trình Độ";
+            btnTrinhDo.TextAlign = ContentAlignment.MiddleLeft;
+            btnTrinhDo.UseVisualStyleBackColor = false;
+            btnTrinhDo.Click += BtnSubmenu_Click;
             // 
             // btnQuanLyPhongBan
             // 
-            this.btnQuanLyPhongBan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.btnQuanLyPhongBan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnQuanLyPhongBan.FlatAppearance.BorderSize = 0;
-            this.btnQuanLyPhongBan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuanLyPhongBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuanLyPhongBan.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnQuanLyPhongBan.Location = new System.Drawing.Point(16, 160);
-            this.btnQuanLyPhongBan.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnQuanLyPhongBan.Name = "btnQuanLyPhongBan";
-            this.btnQuanLyPhongBan.Padding = new System.Windows.Forms.Padding(49, 0, 0, 0);
-            this.btnQuanLyPhongBan.Size = new System.Drawing.Size(390, 80);
-            this.btnQuanLyPhongBan.TabIndex = 2;
-            this.btnQuanLyPhongBan.Tag = "Admin"; // Trưởng phòng chỉ quản lý nhân viên, không quản lý Phòng Ban
-            this.btnQuanLyPhongBan.Text = "Quản Lý Phòng Ban";
-            this.btnQuanLyPhongBan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuanLyPhongBan.UseVisualStyleBackColor = false;
-            this.btnQuanLyPhongBan.Click += new System.EventHandler(this.BtnSubmenu_Click);
+            btnQuanLyPhongBan.BackColor = Color.FromArgb(17, 24, 39);
+            btnQuanLyPhongBan.Dock = DockStyle.Top;
+            btnQuanLyPhongBan.FlatAppearance.BorderSize = 0;
+            btnQuanLyPhongBan.FlatAppearance.MouseOverBackColor = Color.FromArgb(55, 65, 81);
+            btnQuanLyPhongBan.FlatStyle = FlatStyle.Flat;
+            btnQuanLyPhongBan.Font = new Font("Segoe UI", 9.5F);
+            btnQuanLyPhongBan.ForeColor = Color.FromArgb(209, 213, 219);
+            btnQuanLyPhongBan.Location = new Point(0, 128);
+            btnQuanLyPhongBan.Margin = new Padding(0);
+            btnQuanLyPhongBan.Name = "btnQuanLyPhongBan";
+            btnQuanLyPhongBan.Padding = new Padding(55, 0, 10, 0);
+            btnQuanLyPhongBan.Size = new Size(406, 64);
+            btnQuanLyPhongBan.TabIndex = 2;
+            btnQuanLyPhongBan.Tag = "Admin";
+            btnQuanLyPhongBan.Text = "Quản Lý Phòng Ban";
+            btnQuanLyPhongBan.TextAlign = ContentAlignment.MiddleLeft;
+            btnQuanLyPhongBan.UseVisualStyleBackColor = false;
+            btnQuanLyPhongBan.Click += BtnSubmenu_Click;
             // 
             // btnQuanLyNhanVien
             // 
-            this.btnQuanLyNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.btnQuanLyNhanVien.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnQuanLyNhanVien.FlatAppearance.BorderSize = 0;
-            this.btnQuanLyNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuanLyNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuanLyNhanVien.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnQuanLyNhanVien.Location = new System.Drawing.Point(16, 80);
-            this.btnQuanLyNhanVien.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnQuanLyNhanVien.Name = "btnQuanLyNhanVien";
-            this.btnQuanLyNhanVien.Padding = new System.Windows.Forms.Padding(49, 0, 0, 0);
-            this.btnQuanLyNhanVien.Size = new System.Drawing.Size(390, 80);
-            this.btnQuanLyNhanVien.TabIndex = 1;
-            this.btnQuanLyNhanVien.Tag = "Admin,TruongPhong,KeToan";
-            this.btnQuanLyNhanVien.Text = "Danh Sách Hồ Sơ (Xem/Sửa/Xóa)";
-            this.btnQuanLyNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuanLyNhanVien.UseVisualStyleBackColor = false;
-            this.btnQuanLyNhanVien.Click += new System.EventHandler(this.BtnSubmenu_Click);
+            btnQuanLyNhanVien.BackColor = Color.FromArgb(17, 24, 39);
+            btnQuanLyNhanVien.Dock = DockStyle.Top;
+            btnQuanLyNhanVien.FlatAppearance.BorderSize = 0;
+            btnQuanLyNhanVien.FlatAppearance.MouseOverBackColor = Color.FromArgb(55, 65, 81);
+            btnQuanLyNhanVien.FlatStyle = FlatStyle.Flat;
+            btnQuanLyNhanVien.Font = new Font("Segoe UI", 9.5F);
+            btnQuanLyNhanVien.ForeColor = Color.FromArgb(209, 213, 219);
+            btnQuanLyNhanVien.Location = new Point(0, 64);
+            btnQuanLyNhanVien.Margin = new Padding(0);
+            btnQuanLyNhanVien.Name = "btnQuanLyNhanVien";
+            btnQuanLyNhanVien.Padding = new Padding(55, 0, 10, 0);
+            btnQuanLyNhanVien.Size = new Size(406, 64);
+            btnQuanLyNhanVien.TabIndex = 1;
+            btnQuanLyNhanVien.Tag = "Admin,TruongPhong,KeToan";
+            btnQuanLyNhanVien.Text = "Danh Sách Hồ Sơ";
+            btnQuanLyNhanVien.TextAlign = ContentAlignment.MiddleLeft;
+            btnQuanLyNhanVien.UseVisualStyleBackColor = false;
+            btnQuanLyNhanVien.Click += BtnSubmenu_Click;
             // 
             // btnThemNhanVien
             // 
-            this.btnThemNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.btnThemNhanVien.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnThemNhanVien.FlatAppearance.BorderSize = 0;
-            this.btnThemNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThemNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemNhanVien.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnThemNhanVien.Location = new System.Drawing.Point(16, 0);
-            this.btnThemNhanVien.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnThemNhanVien.Name = "btnThemNhanVien";
-            this.btnThemNhanVien.Padding = new System.Windows.Forms.Padding(49, 0, 0, 0);
-            this.btnThemNhanVien.Size = new System.Drawing.Size(390, 80);
-            this.btnThemNhanVien.TabIndex = 0;
-            this.btnThemNhanVien.Tag = "Admin,TruongPhong";
-            this.btnThemNhanVien.Text = "Thêm Nhân Viên (Thao tác Thêm)";
-            this.btnThemNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemNhanVien.UseVisualStyleBackColor = false;
-            this.btnThemNhanVien.Click += new System.EventHandler(this.BtnSubmenu_Click);
+            btnThemNhanVien.BackColor = Color.FromArgb(17, 24, 39);
+            btnThemNhanVien.Dock = DockStyle.Top;
+            btnThemNhanVien.FlatAppearance.BorderSize = 0;
+            btnThemNhanVien.FlatAppearance.MouseOverBackColor = Color.FromArgb(55, 65, 81);
+            btnThemNhanVien.FlatStyle = FlatStyle.Flat;
+            btnThemNhanVien.Font = new Font("Segoe UI", 9.5F);
+            btnThemNhanVien.ForeColor = Color.FromArgb(209, 213, 219);
+            btnThemNhanVien.Location = new Point(0, 0);
+            btnThemNhanVien.Margin = new Padding(0);
+            btnThemNhanVien.Name = "btnThemNhanVien";
+            btnThemNhanVien.Padding = new Padding(55, 0, 10, 0);
+            btnThemNhanVien.Size = new Size(406, 64);
+            btnThemNhanVien.TabIndex = 0;
+            btnThemNhanVien.Tag = "Admin,TruongPhong";
+            btnThemNhanVien.Text = "Thêm Nhân Viên";
+            btnThemNhanVien.TextAlign = ContentAlignment.MiddleLeft;
+            btnThemNhanVien.UseVisualStyleBackColor = false;
+            btnThemNhanVien.Click += BtnSubmenu_Click;
             // 
             // btnHoSo
             // 
-            this.btnHoSo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHoSo.FlatAppearance.BorderSize = 0;
-            this.btnHoSo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHoSo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHoSo.ForeColor = System.Drawing.Color.White;
-            this.btnHoSo.Location = new System.Drawing.Point(0, 80);
-            this.btnHoSo.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnHoSo.Name = "btnHoSo";
-            this.btnHoSo.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnHoSo.Size = new System.Drawing.Size(406, 80);
-            this.btnHoSo.TabIndex = 5;
-            this.btnHoSo.Tag = "Admin,TruongPhong,KeToan"; // Nút cha
-            this.btnHoSo.Text = "👤 Quản Lý Hồ Sơ";
-            this.btnHoSo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHoSo.UseVisualStyleBackColor = true;
-            this.btnHoSo.Click += new System.EventHandler(this.BtnMenu_Click);
+            btnHoSo.BackColor = Color.FromArgb(31, 41, 55);
+            btnHoSo.Dock = DockStyle.Top;
+            btnHoSo.FlatAppearance.BorderSize = 0;
+            btnHoSo.FlatAppearance.MouseDownBackColor = Color.FromArgb(75, 85, 99);
+            btnHoSo.FlatAppearance.MouseOverBackColor = Color.FromArgb(55, 65, 81);
+            btnHoSo.FlatStyle = FlatStyle.Flat;
+            btnHoSo.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnHoSo.ForeColor = Color.FromArgb(243, 244, 246);
+            btnHoSo.Location = new Point(0, 72);
+            btnHoSo.Margin = new Padding(0);
+            btnHoSo.Name = "btnHoSo";
+            btnHoSo.Padding = new Padding(24, 0, 0, 0);
+            btnHoSo.Size = new Size(406, 72);
+            btnHoSo.TabIndex = 5;
+            btnHoSo.Tag = "Admin,TruongPhong,KeToan";
+            btnHoSo.Text = "👤  Quản Lý Hồ Sơ";
+            btnHoSo.TextAlign = ContentAlignment.MiddleLeft;
+            btnHoSo.UseVisualStyleBackColor = false;
+            btnHoSo.Click += BtnMenu_Click;
             // 
             // btnHeThong
             // 
-            this.btnHeThong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHeThong.FlatAppearance.BorderSize = 0;
-            this.btnHeThong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHeThong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHeThong.ForeColor = System.Drawing.Color.White;
-            this.btnHeThong.Location = new System.Drawing.Point(0, 0);
-            this.btnHeThong.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnHeThong.Name = "btnHeThong";
-            this.btnHeThong.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnHeThong.Size = new System.Drawing.Size(406, 80);
-            this.btnHeThong.TabIndex = 4;
-            this.btnHeThong.Tag = "Admin"; // Chỉ Admin quản lý hệ thống
-            this.btnHeThong.Text = "⚙️ Hệ Thống";
-            this.btnHeThong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHeThong.UseVisualStyleBackColor = true;
-            this.btnHeThong.Click += new System.EventHandler(this.BtnSubmenu_Click);
-
+            btnHeThong.BackColor = Color.FromArgb(31, 41, 55);
+            btnHeThong.Dock = DockStyle.Top;
+            btnHeThong.FlatAppearance.BorderSize = 0;
+            btnHeThong.FlatAppearance.MouseDownBackColor = Color.FromArgb(75, 85, 99);
+            btnHeThong.FlatAppearance.MouseOverBackColor = Color.FromArgb(55, 65, 81);
+            btnHeThong.FlatStyle = FlatStyle.Flat;
+            btnHeThong.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnHeThong.ForeColor = Color.FromArgb(243, 244, 246);
+            btnHeThong.Location = new Point(0, 0);
+            btnHeThong.Margin = new Padding(0);
+            btnHeThong.Name = "btnHeThong";
+            btnHeThong.Padding = new Padding(24, 0, 0, 0);
+            btnHeThong.Size = new Size(406, 72);
+            btnHeThong.TabIndex = 4;
+            btnHeThong.Tag = "Admin";
+            btnHeThong.Text = "⚙  Hệ Thống";
+            btnHeThong.TextAlign = ContentAlignment.MiddleLeft;
+            btnHeThong.UseVisualStyleBackColor = false;
+            btnHeThong.Click += BtnSubmenu_Click;
             // 
             // panelContent
             // 
-            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContent.Location = new System.Drawing.Point(406, 0);
-            this.panelContent.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(2088, 1627);
-            this.panelContent.TabIndex = 1;
-
+            panelContent.BackColor = Color.FromArgb(248, 250, 252);
+            panelContent.Dock = DockStyle.Fill;
+            panelContent.Location = new Point(406, 0);
+            panelContent.Margin = new Padding(0);
+            panelContent.Name = "panelContent";
+            panelContent.Size = new Size(2088, 1627);
+            panelContent.TabIndex = 1;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2494, 1627);
-            this.Controls.Add(this.panelContent);
-            this.Controls.Add(this.panelMenu);
-            this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.MinimumSize = new System.Drawing.Size(1934, 1329);
-            this.Name = "Form1";
-            this.Text = "Quản Lý Nhân Sự";
-            this.panelMenu.ResumeLayout(false);
-            this.panelPhanCongSubmenu.ResumeLayout(false);
-            this.panelLuongSubmenu.ResumeLayout(false);
-            this.panelHoSoSubmenu.ResumeLayout(false);
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(248, 250, 252);
+            ClientSize = new Size(2494, 1627);
+            Controls.Add(panelContent);
+            Controls.Add(panelMenu);
+            Font = new Font("Segoe UI", 9F);
+            Margin = new Padding(0);
+            MinimumSize = new Size(2520, 1698);
+            Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Quản Lý Nhân Sự";
+            panelMenu.ResumeLayout(false);
+            panelPhanCongSubmenu.ResumeLayout(false);
+            panelLuongSubmenu.ResumeLayout(false);
+            panelHoSoSubmenu.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
 
@@ -553,7 +526,7 @@
         private System.Windows.Forms.Button btnQuanLyBangLuong;
         private System.Windows.Forms.Button btnChayBangLuong;
         private System.Windows.Forms.Button btnLuong;
-        private System.Windows.Forms.Button btnBaoCao;
+        private System.Windows.Forms.Button btnChucVu;
         private System.Windows.Forms.Button btnPhanCong;
         private System.Windows.Forms.Panel panelPhanCongSubmenu;
         private System.Windows.Forms.Button btnBaoCaoPhanCong;

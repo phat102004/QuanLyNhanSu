@@ -249,6 +249,7 @@
             // 
             TxtSoNgayCong.Location = new Point(19, 318);
             TxtSoNgayCong.Name = "TxtSoNgayCong";
+            TxtSoNgayCong.ReadOnly = true;
             TxtSoNgayCong.Size = new Size(2001, 39);
             TxtSoNgayCong.TabIndex = 6;
             // 

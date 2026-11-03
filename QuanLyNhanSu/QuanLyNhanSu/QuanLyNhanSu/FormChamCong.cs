@@ -11,7 +11,7 @@ namespace QuanLyNhanSu
         private string tenNhanVien;
 
         // Chuỗi kết nối của bạn
-        private string connectionString = @"Data Source=LAPTOP-MK554FA4;Initial Catalog=QuanLyNhanVienMain;Integrated Security=True;Trust Server Certificate=True";
+        private string connectionString = @"Data Source=LAPTOP-MK554FA4;Initial Catalog=QuanLyNhanVien;Integrated Security=True;Trust Server Certificate=True";
 
         public FormChamCong(int idNV, string hoTenNV)
         {

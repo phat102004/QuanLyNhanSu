@@ -39,7 +39,7 @@ namespace QuanLyNhanSu
 
         private void FormPhuCap_Load(object sender, EventArgs e)
         {
-            string chuoiKN = @"Data Source=LAPTOP-MK554FA4;Initial Catalog=QuanLyNhanVienMain;Integrated Security=True;Trust Server Certificate=True";
+            string chuoiKN = @"Data Source=LAPTOP-MK554FA4;Initial Catalog=QuanLyNhanVien;Integrated Security=True;Trust Server Certificate=True";
             ketNoi = new SqlConnection(chuoiKN);
             Load_PhuCap();
 

@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
 using System.Linq;
 using QuanLyNhanSu.usercontrol;
 using System.Drawing; // Cần thiết cho Color, Point, v.v.
 
-// Đảm bảo FormChamCong có sẵn trong scope. 
+// Đảm bảo FormChamCong có sẵn trong scope.
 // Nếu nó nằm trong một namespace khác, hãy thêm 'using [Namespace Của FormChamCong];'
 // Ví dụ: using QuanLyNhanSu.Forms;
 
@@ -96,7 +96,7 @@ namespace QuanLyNhanSu
                 this.btnChamCong.Height = 60;
                 this.btnChamCong.TabIndex = 4;
 
-                // Thiết lập kiểu dáng 
+                // Thiết lập kiểu dáng
                 SetMenuButtonStyle(this.btnChamCong);
 
                 // Gán sự kiện Click
@@ -153,7 +153,7 @@ namespace QuanLyNhanSu
                 switch (btn.Name)
                 {
                     case "btnHoSoCaNhan":
-                        uc = new QuanLyNhanVien(idToPass, this.userQuyen);
+                        uc = new QuanLyNhanVien(idToPass);
                         break;
                     case "btnLuongCaNhan":
                         uc = new BangLuong(idToPass);

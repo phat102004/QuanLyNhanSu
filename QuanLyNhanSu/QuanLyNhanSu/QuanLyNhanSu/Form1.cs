@@ -1,738 +1,341 @@
 using System;
 using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace QuanLyNhanSu
 {
     public partial class Form1 : Form
     {
-        // =========================================================
-        // THÔNG TIN NGƯỜI DÙNG ĐĂNG NHẬP
-        // =========================================================
-
+        // Khai báo các thuộc tính chung
         protected string userQuyen = "";
         protected int userID = 0;
         protected string userName = "";
 
-
-        // =========================================================
-        // CONSTRUCTOR MẶC ĐỊNH
-        // =========================================================
-
+        // Constructor mặc định
         public Form1()
         {
             InitializeComponent();
-
-            HideSubMenus();
-
-            /*
-             * KHÔNG gọi FixAllButtonsStyle() nữa.
-             *
-             * Vì Designer mới đã thiết kế:
-             * - màu menu
-             * - màu hover
-             * - màu submenu
-             * - font
-             *
-             * FixAllButtonsStyle() cũ sẽ ghi đè hết.
-             */
+            this.HideSubMenus();
+            FixAllButtonsStyle();
         }
 
-
-        // =========================================================
-        // CONSTRUCTOR SAU KHI ĐĂNG NHẬP
-        // =========================================================
-
-        public Form1(
-            string quyen,
-            int nhanVienID,
-            string tenNV)
+        // Constructor có tham số để nhận thông tin người dùng đăng nhập
+        public Form1(string quyen, int nhanVienID, string tenNV)
         {
             InitializeComponent();
+            this.userQuyen = quyen;
+            this.userID = nhanVienID;
+            this.userName = tenNV;
 
-            userQuyen = quyen;
-            userID = nhanVienID;
-            userName = tenNV;
-
-            HideSubMenus();
-
-            ApplyPermissions();
+            this.HideSubMenus();
+            this.ApplyPermissions();
         }
 
+        // --- HÀM XỬ LÝ SỰ KIỆN (Dùng protected virtual để Form con ghi đè) ---
 
-        // =========================================================
-        // CLICK MENU CHÍNH
-        // =========================================================
-
-        protected virtual void BtnMenu_Click(
-            object sender,
-            EventArgs e)
+        // 1. Hàm xử lý Click cho các nút MENU chính (Submenu)
+        protected virtual void BtnMenu_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-
-            if (btn == null)
-            {
-                return;
-            }
-
-            ToggleSubMenu(btn);
+            this.ToggleSubMenu(btn);
         }
 
-
-        // =========================================================
-        // CLICK SUBMENU
-        // =========================================================
-
-        protected virtual void BtnSubmenu_Click(
-            object sender,
-            EventArgs e)
+        private void FixAllButtonsStyle()
         {
-            Button btn = sender as Button;
-
-            if (btn == null)
+            foreach (var btn in this.Controls.OfType<Button>())
             {
-                return;
+                btn.UseVisualStyleBackColor = false;
+                btn.FlatStyle = FlatStyle.Flat;
+                btn.FlatAppearance.BorderSize = 0;
+                btn.BackColor = Color.FromArgb(0, 150, 136);
+                btn.ForeColor = Color.White;
             }
 
-            HideSubMenus();
-
-            UserControl uc = null;
+            // Fix cho button nằm trong Panel (panelMenu)
+            foreach (Panel pnl in this.Controls.OfType<Panel>())
+            {
+                foreach (var btn in pnl.Controls.OfType<Button>())
+                {
+                    btn.UseVisualStyleBackColor = false;
+                    btn.FlatStyle = FlatStyle.Flat;
+                    btn.FlatAppearance.BorderSize = 0;
+                    btn.BackColor = Color.FromArgb(0, 150, 136);
+                    btn.ForeColor = Color.White;
+                }
+            }
+        }
+        // 2. Hàm xử lý Click cho các nút SUBMENU (Nút con)
+        protected virtual void BtnSubmenu_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            this.HideSubMenus();
+            System.Windows.Forms.UserControl uc = null;
 
             switch (btn.Name)
             {
-                // =================================================
-                // LƯƠNG
-                // =================================================
-
+                // --- CHỨC NĂNG LƯƠNG (KeToan, Admin, TruongPhong) ---
                 case "btnTinhLuong":
-
-                    uc =
-                        new QuanLyNhanSu.usercontrol.TinhLuong(
-                            this.userID
-                        );
-
+                    // Dành cho Kế toán/Admin
+                    uc = new QuanLyNhanSu.usercontrol.TinhLuong(this.userID);
                     break;
-
 
                 case "btnQuanLyBangLuong":
-
-                    uc =
-                        new QuanLyNhanSu.usercontrol.BaoCaoPhanTich();
-
+                    // Lương Chung (Cho TruongPhong, KeToan xem Báo cáo/Quản lý bảng lương)
+                    uc = new QuanLyNhanSu.usercontrol.BaoCaoPhanTich();
                     break;
-
 
                 case "btnChayBangLuong":
-
-                    uc =
-                        new QuanLyNhanSu.usercontrol.BangLuong();
-
+                    // Dành cho Kế toán/Admin
+                    uc = new QuanLyNhanSu.usercontrol.BangLuong();
                     break;
 
-
-                // =================================================
-                // NHÂN VIÊN
-                // =================================================
+                // --- CHỨC NĂNG HỒ SƠ/QUẢN LÝ (TruongPhong, Admin) ---
 
                 case "btnThemNhanVien":
-
-                    uc =
-                        new QuanLyNhanSu.usercontrol.ThemNhanVien();
-
+                    // KIỂM TRA LẠI: Tên UserControl "ThemNhanVien" có đúng không?
+                    // Nếu bạn đặt tên là "UcThemNhanVien" thì phải sửa thành: new QuanLyNhanSu.usercontrol.UcThemNhanVien();
+                    uc = new QuanLyNhanSu.usercontrol.ThemNhanVien();
                     break;
-
 
                 case "btnQuanLyNhanVien":
-
-                    uc =
-                        new QuanLyNhanSu.usercontrol.QuanLyNhanVien();
-
+                    // Quản lý nhân viên (Xem, Sửa, Xóa). Bạn đã sửa thành QuanLyNhanVien() - Tên này phải khớp chính xác với tên file.
+                    uc = new QuanLyNhanSu.usercontrol.QuanLyNhanVien();
                     break;
-
 
                 case "btnQuanLyPhongBan":
-
-                    uc =
-                        new QuanLyNhanSu.usercontrol.Uc_phongBan();
-
+                    // Bạn đã sửa thành Uc_phongBan()
+                    uc = new QuanLyNhanSu.usercontrol.Uc_phongBan();
                     break;
 
-
-                /*
-                 * QUAN TRỌNG:
-                 *
-                 * Designer của bạn tên là:
-                 *
-                 * btnTrinhDo
-                 *
-                 * chứ KHÔNG PHẢI:
-                 *
-                 * btnQuanLyTrinhDo
-                 */
-                case "btnTrinhDo":
-
-                    uc =
-                        new QuanLyNhanSu.usercontrol.TrinhDo();
-
+                case "btnQuanLyTrinhDo":
+                    // Bạn đã sửa thành TrinhDo()
+                    uc = new QuanLyNhanSu.usercontrol.TrinhDo();
                     break;
 
+                // --- CHỨC NĂNG PHÂN CÔNG (TruongPhong, Admin) ---
 
-                // =================================================
-                // PHÂN CÔNG
-                // =================================================
-
-                case "btnPhanCongCongViec":
-
-                    /*
-                     * Mình chưa đổi logic UserControl của bạn.
-                     *
-                     * Nếu bạn đã có UserControl PhanCongCongViec
-                     * thì thêm tại đây.
-                     *
-                     * Hiện code cũ của bạn chưa có phần khởi tạo nó.
-                     */
-
-                    MessageBox.Show(
-                        "Chức năng Phân Công Công Việc chưa được gắn UserControl trong Form1.cs.",
-                        "Thông báo",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information
-                    );
-
-                    return;
-
-
-                /*
-                 * Designer hiện tại tên:
-                 *
-                 * btnBaoCaoPhanCong
-                 *
-                 * Đây chính là nút mở BaoCaoPhanCong.
-                 */
-                case "btnBaoCaoPhanCong":
-
-                    uc =
-                        new QuanLyNhanSu.usercontrol.BaoCaoPhanCong();
-
+                case "btnBangPhanCongQuanLy":
+                    // Bảng phân công chung (Không truyền ID, hiển thị tất cả)
+                    uc = new QuanLyNhanSu.usercontrol.BaoCaoPhanCong();
                     break;
 
-
-                // =================================================
-                // QUẢN LÝ CHỨC VỤ
-                // =================================================
-
-                case "btnChucVu":
-
-                    uc =
-                        new QuanLyNhanSu.usercontrol.ChucVu();
-
-                    break;
-
-
-                // =================================================
-                // HỆ THỐNG
-                // =================================================
-
-                case "btnHeThong":
-                    uc = new QuanLyNhanSu.usercontrol.HeThong(
-                        this.userID,
-                        this.userName,
-                        this.userQuyen
-                    );
+                // --- CHỨC NĂNG KHÁC ---
+                case "btnBaoCaoPhanTich":
+                    // Nút này đã bị ẩn trong ApplyPermissions(), ta vẫn giữ logic phòng ngừa.
+                    MessageBox.Show($"Chức năng '{btn.Text}' đã bị ẩn và không thể sử dụng.", "Thông báo");
                     break;
             }
-
-
-            // =====================================================
-            // LOAD USERCONTROL
-            // =====================================================
 
             if (uc != null)
             {
-                LoadControlToPanel(uc);
+                this.LoadControlToPanel(uc);
             }
-            else
+            else if (btn.Name != "btnBaoCaoPhanTich")
             {
-                MessageBox.Show(
-                    $"Chức năng '{btn.Text}' chưa được triển khai UserControl.",
-                    "Thông báo",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information
-                );
+                MessageBox.Show($"Chức năng '{btn.Text}' đã được click nhưng chưa được triển khai UserControl.", "Thông báo");
             }
         }
 
-
-        // =========================================================
-        // MENU CÁ NHÂN
-        // =========================================================
-
-        protected virtual void BtnMenuCaNhan_Click(
-            object sender,
-            EventArgs e)
+        // 3. Hàm xử lý Click cho các nút CHỨC NĂNG CÁ NHÂN (Cho FormNhanVien ghi đè)
+        protected virtual void BtnMenuCaNhan_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-
-            if (btn == null)
-            {
-                return;
-            }
-
-            /*
-             * Giữ nguyên để các Form con như FormNhanVien,
-             * FormTruongPhong... có thể override.
-             */
-
-            MessageBox.Show(
-                $"Chức năng cá nhân '{btn.Text}' đã được click. " +
-                "Cần triển khai logic tải UserControl trong Form con.",
-                "Thông báo",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information
-            );
+            MessageBox.Show($"Chức năng cá nhân '{btn.Text}' đã được click. Cần triển khai logic tải UserControl trong Form con.", "Thông báo");
         }
 
-
-        // =========================================================
-        // HÀM CŨ - GIỮ LẠI NẾU FORM CON ĐANG OVERRIDE
-        // =========================================================
-
-        protected virtual void BtnTinhLuong_Click(
-            object sender,
-            EventArgs e)
+        // 4. HÀM XỬ LÝ CLICK CHO NÚT TÍNH LƯƠNG MỚI (Đã loại bỏ sự kiện cũ)
+        protected virtual void BtnTinhLuong_Click(object sender, EventArgs e)
         {
-            HideSubMenus();
-
-            MessageBox.Show(
-                "Chức năng 'Tính Lương' đã được click.",
-                "Thông báo",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information
-            );
+            this.HideSubMenus();
+            MessageBox.Show($"Chức năng 'Tính Lương' đã được click. Cần triển khai logic tải UserControl.", "Thông báo");
         }
 
+        // --- CÁC HÀM HỖ TRỢ MENU VÀ PHÂN QUYỀN ---
 
-        // =========================================================
-        // ẨN TOÀN BỘ SUBMENU
-        // =========================================================
-
+        // Hàm ẩn tất cả Submenu (Giữ nguyên)
         protected void HideSubMenus()
         {
-            if (panelHoSoSubmenu != null)
-            {
-                panelHoSoSubmenu.Visible = false;
-            }
+            var subPanels = this.Controls.Cast<Control>().OfType<Panel>()
+                .Where(p => p.Name.EndsWith("Submenu", StringComparison.OrdinalIgnoreCase));
 
-            if (panelLuongSubmenu != null)
+            foreach (var panel in subPanels)
             {
-                panelLuongSubmenu.Visible = false;
-            }
-
-            if (panelPhanCongSubmenu != null)
-            {
-                panelPhanCongSubmenu.Visible = false;
+                panel.Visible = false;
             }
         }
 
-
-        // =========================================================
-        // MỞ / ĐÓNG SUBMENU
-        // =========================================================
-
+        // Hàm bật/tắt Submenu (Giữ nguyên)
         protected void ToggleSubMenu(Button menuButton)
         {
-            if (menuButton == null)
-            {
-                return;
-            }
-
             Panel subMenu = null;
+            // Cần thêm logic tìm kiếm Panel Submenu tương ứng nếu bạn có nhiều Panel
+            // ... (Giữ nguyên logic ToggleSubMenu của bạn) ...
 
-            switch (menuButton.Name)
+            if (subMenu != null)
             {
-                case "btnHoSo":
-
-                    subMenu =
-                        panelHoSoSubmenu;
-
-                    break;
-
-
-                case "btnLuong":
-
-                    subMenu =
-                        panelLuongSubmenu;
-
-                    break;
-
-
-                case "btnPhanCong":
-
-                    subMenu =
-                        panelPhanCongSubmenu;
-
-                    break;
+                if (subMenu.Visible == true)
+                {
+                    subMenu.Visible = false;
+                }
+                else
+                {
+                    this.HideSubMenus();
+                    subMenu.Visible = true;
+                }
             }
-
-
-            // Nút không có submenu
-            if (subMenu == null)
-            {
-                return;
-            }
-
-
-            // =====================================================
-            // ĐANG MỞ -> ĐÓNG
-            // =====================================================
-
-            if (subMenu.Visible)
-            {
-                subMenu.Visible = false;
-
-                return;
-            }
-
-
-            // =====================================================
-            // ĐÓNG MENU KHÁC
-            // =====================================================
-
-            HideSubMenus();
-
-
-            // =====================================================
-            // MỞ MENU HIỆN TẠI
-            // =====================================================
-
-            subMenu.Visible = true;
         }
 
-
-        // =========================================================
-        // PHÂN QUYỀN
-        // =========================================================
-
+        // Hàm Phân quyền hiển thị các nút trên menu
+        // Hàm Phân quyền hiển thị các nút trên menu
         protected void ApplyPermissions()
         {
-            if (string.IsNullOrWhiteSpace(userQuyen))
+            if (string.IsNullOrEmpty(this.userQuyen)) return;
+
+            // --- KHAI BÁO CÁC NÚT CẦN THIẾT ---
+            Button btnHoSoCaNhan = this.Controls.Find("btnHoSoCaNhan", true).FirstOrDefault() as Button;
+            Button btnLuongCaNhan = this.Controls.Find("btnLuongCaNhan", true).FirstOrDefault() as Button;
+            Button btnCongViecCaNhan = this.Controls.Find("btnCongViecCaNhan", true).FirstOrDefault() as Button;
+            Button btnHoSo = this.Controls.Find("btnHoSo", true).FirstOrDefault() as Button;
+            Button btnLuong = this.Controls.Find("btnLuong", true).FirstOrDefault() as Button;
+            Button btnPhanCong = this.Controls.Find("btnPhanCong", true).FirstOrDefault() as Button;
+
+            // Các nút con
+            Button btnTinhLuong = this.Controls.Find("btnTinhLuong", true).FirstOrDefault() as Button;
+            Button btnQuanLyBangLuong = this.Controls.Find("btnQuanLyBangLuong", true).FirstOrDefault() as Button;
+            Button btnChayBangLuong = this.Controls.Find("btnChayBangLuong", true).FirstOrDefault() as Button;
+            Button btnBaoCaoPhanTich = this.Controls.Find("btnBaoCaoPhanTich", true).FirstOrDefault() as Button;
+            Button btnBangPhanCongQuanLy = this.Controls.Find("btnBangPhanCongQuanLy", true).FirstOrDefault() as Button;
+
+            // Khai báo các nút con quản lý
+            Button btnThemNhanVien = this.Controls.Find("btnThemNhanVien", true).FirstOrDefault() as Button;
+            Button btnQuanLyNhanVien = this.Controls.Find("btnQuanLyNhanVien", true).FirstOrDefault() as Button;
+            Button btnQuanLyPhongBan = this.Controls.Find("btnQuanLyPhongBan", true).FirstOrDefault() as Button;
+            Button btnQuanLyTrinhDo = this.Controls.Find("btnQuanLyTrinhDo", true).FirstOrDefault() as Button;
+
+            Panel panelHoSoSubmenu = this.Controls.Find("panelHoSoSubmenu", true).FirstOrDefault() as Panel;
+            Panel panelLuongSubmenu = this.Controls.Find("panelLuongSubmenu", true).FirstOrDefault() as Panel;
+            Panel panelPhanCongSubmenu = this.Controls.Find("panelPhanCongSubmenu", true).FirstOrDefault() as Panel;
+
+
+            // --- BƯỚC 1: LÔ-GIC PHÂN QUYỀN CHUNG DỰA TRÊN TAG (Áp dụng cho nút con) ---
+            if (this.Controls.Find("panelMenu", true).FirstOrDefault() is Panel panelMenu)
             {
-                return;
-            }
+                var allControls = panelMenu.Controls.Cast<Control>().ToList();
 
+                // --- GÁN TAG CỤ THỂ CHO CÁC NÚT CON ---
+                if (btnThemNhanVien != null) btnThemNhanVien.Tag = "Admin,TruongPhong";
+                if (btnQuanLyNhanVien != null) btnQuanLyNhanVien.Tag = "Admin,TruongPhong";
+                if (btnQuanLyPhongBan != null) btnQuanLyPhongBan.Tag = "Admin,TruongPhong";
+                if (btnQuanLyTrinhDo != null) btnQuanLyTrinhDo.Tag = "Admin,TruongPhong"; // Giữ lại cho TruongPhong như code cũ
 
-            // =====================================================
-            // GÁN TAG QUYỀN
-            //
-            // Dùng tên control thật trong Designer.
-            // =====================================================
+                if (btnBangPhanCongQuanLy != null) btnBangPhanCongQuanLy.Tag = "Admin,TruongPhong";
 
-            if (btnThemNhanVien != null)
-            {
-                btnThemNhanVien.Tag =
-                    "Admin,TruongPhong";
-            }
-
-            if (btnQuanLyNhanVien != null)
-            {
-                btnQuanLyNhanVien.Tag =
-                    "Admin,TruongPhong";
-            }
-
-            if (btnQuanLyPhongBan != null)
-            {
-                btnQuanLyPhongBan.Tag =
-                    "Admin,TruongPhong";
-            }
-
-            if (btnTrinhDo != null)
-            {
-                btnTrinhDo.Tag =
-                    "Admin,TruongPhong";
-            }
-
-
-            // =====================================================
-            // LƯƠNG
-            // =====================================================
-
-            if (btnTinhLuong != null)
-            {
-                btnTinhLuong.Tag =
-                    "Admin,KeToan";
-            }
-
-            if (btnQuanLyBangLuong != null)
-            {
-                btnQuanLyBangLuong.Tag =
-                    "Admin,KeToan,TruongPhong";
-            }
-
-            if (btnChayBangLuong != null)
-            {
-                btnChayBangLuong.Tag =
-                    "Admin,KeToan";
-            }
-
-
-            // =====================================================
-            // PHÂN CÔNG
-            // =====================================================
-
-            if (btnPhanCongCongViec != null)
-            {
-                btnPhanCongCongViec.Tag =
-                    "Admin,TruongPhong";
-            }
-
-            if (btnBaoCaoPhanCong != null)
-            {
-                btnBaoCaoPhanCong.Tag =
-                    "Admin,TruongPhong,NhanVien";
-            }
-
-
-            // =====================================================
-            // ÁP DỤNG TAG CHO TOÀN BỘ BUTTON TRONG MENU
-            //
-            // Khác code cũ:
-            // Code cũ chỉ kiểm tra button trực tiếp trong panelMenu.
-            // Các button nằm trong submenu không được kiểm tra.
-            //
-            // Bản này kiểm tra đệ quy.
-            // =====================================================
-
-            ApplyPermissionRecursive(panelMenu);
-
-
-            // =====================================================
-            // QUYỀN NHÂN VIÊN
-            // =====================================================
-
-            if (userQuyen == "NhanVien")
-            {
-                // Không có quyền quản lý hồ sơ
-                btnHoSo.Visible = false;
-
-                // Không quản lý lương
-                btnLuong.Visible = false;
-
-                // Không quản lý phân công
-                btnPhanCong.Visible = false;
-
-                panelHoSoSubmenu.Visible = false;
-                panelLuongSubmenu.Visible = false;
-                panelPhanCongSubmenu.Visible = false;
-
-
-                // Chức năng cá nhân
-                btnHoSoCaNhan.Visible = true;
-                btnLuongCaNhan.Visible = true;
-                btnCongViecCaNhan.Visible = true;
-
-
-                /*
-                 * Nhân viên không cần nút Bảng Phân Công
-                 * trong menu quản lý vì đã có
-                 * Công Việc Của Tôi.
-                 */
-                btnBaoCaoPhanCong.Visible = false;
-            }
-
-
-            // =====================================================
-            // QUYỀN TRƯỞNG PHÒNG
-            // =====================================================
-
-            else if (userQuyen == "TruongPhong")
-            {
-                // Có Hồ sơ
-                btnHoSo.Visible = true;
-
-                // Không quản lý lương
-                btnLuong.Visible = false;
-
-                // Có phân công
-                btnPhanCong.Visible = true;
-
-                panelLuongSubmenu.Visible = false;
-
-
-                // Cá nhân
-                btnHoSoCaNhan.Visible = true;
-                btnLuongCaNhan.Visible = true;
-                btnCongViecCaNhan.Visible = true;
-            }
-
-
-            // =====================================================
-            // KẾ TOÁN
-            // =====================================================
-
-            else if (userQuyen == "KeToan")
-            {
-                // Không quản lý hồ sơ
-                btnHoSo.Visible = false;
-
-                // Có menu lương
-                btnLuong.Visible = true;
-
-                // Không quản lý phân công
-                btnPhanCong.Visible = false;
-
-                panelHoSoSubmenu.Visible = false;
-                panelPhanCongSubmenu.Visible = false;
-
-
-                // Cá nhân
-                btnHoSoCaNhan.Visible = true;
-                btnLuongCaNhan.Visible = true;
-                btnCongViecCaNhan.Visible = true;
-            }
-
-
-            // =====================================================
-            // ADMIN
-            // =====================================================
-
-            else if (userQuyen == "Admin")
-            {
-                btnHoSo.Visible = true;
-
-                btnLuong.Visible = true;
-
-                btnPhanCong.Visible = true;
-
-
-                // Admin có Hồ sơ cá nhân
-                btnHoSoCaNhan.Visible = true;
-
-
-                // Giữ đúng logic cũ của bạn
-                btnLuongCaNhan.Visible = false;
-
-                btnCongViecCaNhan.Visible = false;
-            }
-
-
-            // =====================================================
-            // SAU KHI PHÂN QUYỀN
-            // BAN ĐẦU KHÔNG MỞ SUBMENU
-            // =====================================================
-
-            HideSubMenus();
-        }
-
-
-        // =========================================================
-        // ÁP DỤNG TAG PHÂN QUYỀN ĐỆ QUY
-        // =========================================================
-
-        private void ApplyPermissionRecursive(Control parent)
-        {
-            if (parent == null)
-            {
-                return;
-            }
-
-            foreach (Control control in parent.Controls)
-            {
-                // -------------------------------------------------
-                // BUTTON
-                // -------------------------------------------------
-
-                if (control is Button btn)
+                // Lương
+                if (btnTinhLuong != null)
                 {
-                    string tag =
-                        btn.Tag?.ToString() ?? "";
+                    btnTinhLuong.Click -= BtnTinhLuong_Click; // Gỡ bỏ hàm cũ
+                    btnTinhLuong.Click += BtnSubmenu_Click;    // Gán lại hàm chung
+                    btnTinhLuong.Tag = "Admin,KeToan";
+                }
+                if (btnQuanLyBangLuong != null) btnQuanLyBangLuong.Tag = "Admin,KeToan,TruongPhong";
+                if (btnChayBangLuong != null) btnChayBangLuong.Tag = "Admin,KeToan";
 
-                    if (!string.IsNullOrWhiteSpace(tag))
+                // Ẩn nút Báo cáo phân tích
+                if (btnBaoCaoPhanTich != null)
+                {
+                    btnBaoCaoPhanTich.Visible = false;
+                }
+
+                // 3. Vòng lặp kiểm tra Tag chung
+                foreach (Control control in allControls)
+                {
+                    string tag = (control.Tag != null) ? control.Tag.ToString() : "";
+
+                    if (!string.IsNullOrEmpty(tag))
                     {
-                        string[] roles =
-                            tag.Split(
-                                ',',
-                                StringSplitOptions.RemoveEmptyEntries
-                            );
-
-                        bool duocPhep =
-                            roles.Any(
-                                role =>
-                                    role.Trim().Equals(
-                                        userQuyen,
-                                        StringComparison.OrdinalIgnoreCase
-                                    )
-                            );
-
-                        btn.Visible =
-                            duocPhep;
+                        // Nếu vai trò HIỆN TẠI có trong Tag, hiển thị nút. Ngược lại, ẩn.
+                        control.Visible = tag.Contains(this.userQuyen);
                     }
                 }
+            }
 
 
-                // -------------------------------------------------
-                // CONTROL CON
-                // -------------------------------------------------
+            // --- BƯỚC 2: LÔ-GIC ĐẶC BIỆT THEO VAI TRÒ ---
 
-                if (control.HasChildren)
+            if (this.userQuyen == "NhanVien" || this.userQuyen == "TruongPhong")
+            {
+                // Ẩn menu Lương và các nút con
+                if (btnLuong != null) btnLuong.Visible = false;
+                if (panelLuongSubmenu != null) panelLuongSubmenu.Visible = false;
+
+                if (this.userQuyen == "TruongPhong")
                 {
-                    ApplyPermissionRecursive(control);
+                    // Trưởng phòng: HIỆN MENU HỒ SƠ VÀ PHÂN CÔNG (vẫn giữ các nút Quản lý còn lại)
+                    if (btnHoSo != null) btnHoSo.Visible = true;
+                    if (btnPhanCong != null) btnPhanCong.Visible = true;
+
+                    // **QUAN TRỌNG:** KHÔNG ẨN panelHoSoSubmenu VÀ panelPhanCongSubmenu Ở ĐÂY CHO TRƯỞNG PHÒNG NỮA.
+                    // Các nút con bên trong đã được xử lý Visible ở BƯỚC 1.
                 }
+
+                if (this.userQuyen == "NhanVien")
+                {
+                    // Nhân viên: Ẩn các menu quản lý
+                    if (btnHoSo != null) btnHoSo.Visible = false;
+                    if (btnPhanCong != null) btnPhanCong.Visible = false;
+                    // Nhân viên: Ẩn các Submenu quản lý (DÒNG SỬA)
+                    if (panelHoSoSubmenu != null) panelHoSoSubmenu.Visible = false;
+                    if (panelPhanCongSubmenu != null) panelPhanCongSubmenu.Visible = false;
+                    if (btnBangPhanCongQuanLy != null) btnBangPhanCongQuanLy.Visible = false;
+
+                }
+
+                // **GIỮ NGUYÊN LOGIC CHO CÁ NHÂN** (Chung cho NV và TP)
+                if (btnHoSoCaNhan != null) btnHoSoCaNhan.Visible = true;
+                if (btnLuongCaNhan != null) btnLuongCaNhan.Visible = true;
+                if (btnCongViecCaNhan != null) btnCongViecCaNhan.Visible = true;
+            }
+            else if (this.userQuyen == "KeToan")
+            {
+                // **GIỮ NGUYÊN LOGIC CHO KẾ TOÁN**
+                if (btnHoSo != null) btnHoSo.Visible = false;
+                if (btnPhanCong != null) btnPhanCong.Visible = false;
+                if (btnLuong != null) btnLuong.Visible = true;
+
+                // Kế toán chỉ cần ẩn các submenu không cần thiết
+                if (panelHoSoSubmenu != null) panelHoSoSubmenu.Visible = false;
+                if (panelPhanCongSubmenu != null) panelPhanCongSubmenu.Visible = false;
+                if (btnBangPhanCongQuanLy != null) btnBangPhanCongQuanLy.Visible = false;
+
+                // **GIỮ NGUYÊN LOGIC CHO CÁ NHÂN**
+                if (btnHoSoCaNhan != null) btnHoSoCaNhan.Visible = true;
+                if (btnLuongCaNhan != null) btnLuongCaNhan.Visible = true;
+                if (btnCongViecCaNhan != null) btnCongViecCaNhan.Visible = true;
+            }
+            else // Admin (Hiển thị tất cả)
+            {
+                // 1. Hiển thị Menu Quản lý
+                if (btnHoSo != null) btnHoSo.Visible = true;
+                if (btnLuong != null) btnLuong.Visible = true;
+                if (btnPhanCong != null) btnPhanCong.Visible = true;
+
+                // 2. Hiển thị Nút Cá nhân (Admin cũng là Nhân viên)
+                if (btnHoSoCaNhan != null) btnHoSoCaNhan.Visible = true;
+                if (btnLuongCaNhan != null) btnLuongCaNhan.Visible = false;
+                if (btnCongViecCaNhan != null) btnCongViecCaNhan.Visible = false;
             }
         }
 
-
-        // =========================================================
-        // LOAD USERCONTROL VÀO PANEL CONTENT
-        // =========================================================
-
+        // Hàm load UserControl vào panelContent (Giữ nguyên)
         protected void LoadControlToPanel(UserControl uc)
         {
-            if (uc == null)
-            {
-                return;
-            }
-
-            if (panelContent == null)
-            {
-                MessageBox.Show(
-                    "Không tìm thấy panelContent.",
-                    "Lỗi",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
-
-                return;
-            }
-
-
-            // =====================================================
-            // XÓA USERCONTROL CŨ
-            // =====================================================
+            if (uc == null || this.Controls.Find("panelContent", true).FirstOrDefault() is not Panel panelContent) return;
 
             panelContent.Controls.Clear();
-
-
-            // =====================================================
-            // USERCONTROL CHIẾM TOÀN BỘ PANEL
-            // =====================================================
-
-            uc.Dock =
-                DockStyle.Fill;
-
-            uc.Margin =
-                new Padding(0);
-
-
-            // =====================================================
-            // THÊM VÀO PANEL
-            // =====================================================
-
-            panelContent.Controls.Add(
-                uc
-            );
-
-            uc.BringToFront();
+            uc.Dock = DockStyle.Fill;
+            panelContent.Controls.Add(uc);
         }
+
     }
 }

@@ -1,7 +1,7 @@
-using System;
+﻿using System;
 using System.Data;
 using System.Windows.Forms;
-using Microsoft.Data.SqlClient;
+using Microsoft.Data.SqlClient; 
 
 namespace QuanLyNhanSu.usercontrol
 {
@@ -73,7 +73,7 @@ namespace QuanLyNhanSu.usercontrol
                     da.Fill(dt);
 
                     DgvChiTietChamCong.DataSource = dt;
-                    SetupDataGridViewColumns();
+                    SetupDataGridViewColumns(); 
 
                     if (dt.Rows.Count == 0)
                     {
@@ -112,7 +112,7 @@ namespace QuanLyNhanSu.usercontrol
                     da.Fill(dt);
 
                     DgvChiTietChamCong.DataSource = dt;
-                    SetupDataGridViewColumns();
+                    SetupDataGridViewColumns(); 
                 }
             }
             catch (Exception ex)

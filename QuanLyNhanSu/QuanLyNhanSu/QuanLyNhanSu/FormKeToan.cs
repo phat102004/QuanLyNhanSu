@@ -217,11 +217,15 @@ namespace QuanLyNhanSu
                 case "btnHoSoCaNhan":
                     LoadControlToPanel(new QuanLyNhanSu.usercontrol.QuanLyNhanVien(this.userID));
                     break;
+
                 case "btnLuongCaNhan":
-                    LoadControlToPanel(new QuanLyNhanSu.usercontrol.BangLuong(this.userID));
+                    LoadControlToPanel(new QuanLyNhanSu.usercontrol.LuongCaNhan(this.userID)
+                    );
                     break;
+
                 case "btnCongViecCaNhan":
-                    LoadControlToPanel(new QuanLyNhanSu.usercontrol.BaoCaoPhanCong(this.userID));
+                    LoadControlToPanel(new QuanLyNhanSu.usercontrol.CongViecCaNhan(this.userID)
+                    );
                     break;
                 // Nếu là nút Chi tiết chấm công: tải UC ChiTietChamCong vào panelContent
                 case "btnChiTietChamCong":

@@ -1,13 +1,13 @@
-namespace QuanLyNhanSu.usercontrol
+﻿namespace QuanLyNhanSu.usercontrol
 {
     partial class ThemNhanVien
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -22,350 +22,467 @@ namespace QuanLyNhanSu.usercontrol
 
         #region Component Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
+
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+
+            // Khởi tạo lại toàn bộ control có sẵn
             groupBox1 = new GroupBox();
+
             DtpNgayVaoLam = new DateTimePicker();
             DtpNgaySinh = new DateTimePicker();
+
             CbxChucVu = new ComboBox();
             CbxPhongBan = new ComboBox();
             CbxTrinhDo = new ComboBox();
-            label14 = new Label();
-            label18 = new Label();
+            CbxTrangThaiLamViec = new ComboBox();
+            CbxGioiTinh = new ComboBox();
+
+            TxtCMND_CCCD = new TextBox();
+            TxtEmail = new TextBox();
+            TxtSoDienThoai = new TextBox();
+            TxtDiaChi = new TextBox();
+            TxtTenNhanVien = new TextBox();
+            TxtMaNhanVien = new TextBox();
+
             BtnThemNhanVien = new Button();
+
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            label6 = new Label();
+            label7 = new Label();
+            label8 = new Label();
+            label9 = new Label();
             label10 = new Label();
             label11 = new Label();
-            TxtTrangThaiLamVien = new TextBox();
             label13 = new Label();
-            label6 = new Label();
-            TxtCMND_CCCD = new TextBox();
-            label7 = new Label();
-            TxtEmail = new TextBox();
-            label8 = new Label();
-            TxtSoDienThoai = new TextBox();
-            label9 = new Label();
-            TxtDiaChi = new TextBox();
-            label4 = new Label();
-            TxtGioiTinh = new TextBox();
-            label5 = new Label();
-            label2 = new Label();
-            TxtTenNhanVien = new TextBox();
-            label1 = new Label();
-            TxtMaNhanVien = new TextBox();
-            label3 = new Label();
-            contextMenuStrip1 = new ContextMenuStrip(components);
-            groupBox1.SuspendLayout();
+            label14 = new Label();
+            label18 = new Label();
+
+            contextMenuStrip1 =
+                new ContextMenuStrip(components);
+
+            Color navy = Color.FromArgb(25, 48, 80);
+            Color blue = Color.FromArgb(35, 91, 155);
+            Color background = Color.FromArgb(245, 247, 251);
+
             SuspendLayout();
-            //
-            // groupBox1
-            //
-            groupBox1.Controls.Add(DtpNgayVaoLam);
-            groupBox1.Controls.Add(DtpNgaySinh);
-            groupBox1.Controls.Add(CbxChucVu);
-            groupBox1.Controls.Add(CbxPhongBan);
-            groupBox1.Controls.Add(CbxTrinhDo);
-            groupBox1.Controls.Add(label14);
-            groupBox1.Controls.Add(label18);
-            groupBox1.Controls.Add(BtnThemNhanVien);
-            groupBox1.Controls.Add(label10);
-            groupBox1.Controls.Add(label11);
-            groupBox1.Controls.Add(TxtTrangThaiLamVien);
-            groupBox1.Controls.Add(label13);
-            groupBox1.Controls.Add(label6);
-            groupBox1.Controls.Add(TxtCMND_CCCD);
-            groupBox1.Controls.Add(label7);
-            groupBox1.Controls.Add(TxtEmail);
-            groupBox1.Controls.Add(label8);
-            groupBox1.Controls.Add(TxtSoDienThoai);
-            groupBox1.Controls.Add(label9);
-            groupBox1.Controls.Add(TxtDiaChi);
-            groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(TxtGioiTinh);
-            groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(TxtTenNhanVien);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(TxtMaNhanVien);
-            groupBox1.Location = new Point(16, 81);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(2054, 1528);
-            groupBox1.TabIndex = 0;
-            groupBox1.TabStop = false;
-            //
-            // DtpNgayVaoLam
-            //
-            DtpNgayVaoLam.CustomFormat = "dd/MM/yyyy";
-            DtpNgayVaoLam.Format = DateTimePickerFormat.Custom;
-            DtpNgayVaoLam.Location = new Point(19, 577);
-            DtpNgayVaoLam.Name = "DtpNgayVaoLam";
-            DtpNgayVaoLam.Size = new Size(850, 39);
-            DtpNgayVaoLam.TabIndex = 41;
-            //
-            // DtpNgaySinh
-            //
-            DtpNgaySinh.CustomFormat = "dd/MM/yyyy";
-            DtpNgaySinh.Format = DateTimePickerFormat.Custom;
-            DtpNgaySinh.Location = new Point(19, 207);
-            DtpNgaySinh.Name = "DtpNgaySinh";
-            DtpNgaySinh.Size = new Size(850, 39);
-            DtpNgaySinh.TabIndex = 40;
-            //
-            // CbxChucVu
-            //
-            CbxChucVu.FormattingEnabled = true;
-            CbxChucVu.Location = new Point(1181, 690);
-            CbxChucVu.Name = "CbxChucVu";
-            CbxChucVu.Size = new Size(850, 40);
-            CbxChucVu.TabIndex = 39;
-            //
-            // CbxPhongBan
-            //
-            CbxPhongBan.FormattingEnabled = true;
-            CbxPhongBan.Location = new Point(19, 690);
-            CbxPhongBan.Name = "CbxPhongBan";
-            CbxPhongBan.Size = new Size(850, 40);
-            CbxPhongBan.TabIndex = 38;
-            //
-            // CbxTrinhDo
-            //
-            CbxTrinhDo.FormattingEnabled = true;
-            CbxTrinhDo.Location = new Point(19, 809);
-            CbxTrinhDo.Name = "CbxTrinhDo";
-            CbxTrinhDo.Size = new Size(850, 40);
-            CbxTrinhDo.TabIndex = 37;
-            //
-            // label14
-            //
-            label14.AutoSize = true;
-            label14.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label14.Location = new Point(19, 765);
-            label14.Name = "label14";
-            label14.Size = new Size(123, 32);
-            label14.TabIndex = 36;
-            label14.Text = "Trình độ: ";
-            //
-            // label18
-            //
-            label18.AutoSize = true;
-            label18.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label18.Location = new Point(1181, 533);
-            label18.Name = "label18";
-            label18.Size = new Size(244, 32);
-            label18.TabIndex = 34;
-            label18.Text = "Trạng thái làm việc: ";
-            //
-            // BtnThemNhanVien
-            //
-            BtnThemNhanVien.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            BtnThemNhanVien.Location = new Point(19, 1147);
-            BtnThemNhanVien.Name = "BtnThemNhanVien";
-            BtnThemNhanVien.Size = new Size(256, 56);
-            BtnThemNhanVien.TabIndex = 32;
-            BtnThemNhanVien.Text = "Thêm mới nhân viên";
-            BtnThemNhanVien.UseVisualStyleBackColor = true;
-            BtnThemNhanVien.Click += BtnThemNhanVien_Click;
-            //
-            // label10
-            //
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label10.Location = new Point(1181, 646);
-            label10.Name = "label10";
-            label10.Size = new Size(120, 32);
-            label10.TabIndex = 23;
-            label10.Text = "Chức vụ: ";
-            //
-            // label11
-            //
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label11.Location = new Point(19, 646);
-            label11.Name = "label11";
-            label11.Size = new Size(152, 32);
-            label11.TabIndex = 21;
-            label11.Text = "Phòng ban: ";
-            //
-            // TxtTrangThaiLamVien
-            //
-            TxtTrangThaiLamVien.Location = new Point(1181, 577);
-            TxtTrangThaiLamVien.Name = "TxtTrangThaiLamVien";
-            TxtTrangThaiLamVien.Size = new Size(850, 39);
-            TxtTrangThaiLamVien.TabIndex = 18;
-            //
-            // label13
-            //
-            label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label13.Location = new Point(19, 533);
-            label13.Name = "label13";
-            label13.Size = new Size(192, 32);
-            label13.TabIndex = 17;
-            label13.Text = "Ngày vào làm:  ";
-            //
-            // label6
-            //
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label6.Location = new Point(1181, 410);
-            label6.Name = "label6";
-            label6.Size = new Size(174, 32);
-            label6.TabIndex = 15;
-            label6.Text = "CMND_CCCD: ";
-            //
-            // TxtCMND_CCCD
-            //
-            TxtCMND_CCCD.Location = new Point(1181, 454);
-            TxtCMND_CCCD.Name = "TxtCMND_CCCD";
-            TxtCMND_CCCD.Size = new Size(850, 39);
-            TxtCMND_CCCD.TabIndex = 14;
-            //
-            // label7
-            //
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label7.Location = new Point(19, 410);
-            label7.Name = "label7";
-            label7.Size = new Size(97, 32);
-            label7.TabIndex = 13;
-            label7.Text = "Email:  ";
-            //
-            // TxtEmail
-            //
-            TxtEmail.Location = new Point(19, 454);
-            TxtEmail.Name = "TxtEmail";
-            TxtEmail.Size = new Size(850, 39);
-            TxtEmail.TabIndex = 12;
-            //
-            // label8
-            //
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label8.Location = new Point(1181, 297);
-            label8.Name = "label8";
-            label8.Size = new Size(178, 32);
-            label8.TabIndex = 11;
-            label8.Text = "Số điện thoại: ";
-            //
-            // TxtSoDienThoai
-            //
-            TxtSoDienThoai.Location = new Point(1181, 341);
-            TxtSoDienThoai.Name = "TxtSoDienThoai";
-            TxtSoDienThoai.Size = new Size(850, 39);
-            TxtSoDienThoai.TabIndex = 10;
-            //
-            // label9
-            //
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label9.Location = new Point(19, 297);
-            label9.Name = "label9";
-            label9.Size = new Size(106, 32);
-            label9.TabIndex = 9;
-            label9.Text = "Địa chỉ: ";
-            //
-            // TxtDiaChi
-            //
-            TxtDiaChi.Location = new Point(19, 341);
-            TxtDiaChi.Name = "TxtDiaChi";
-            TxtDiaChi.Size = new Size(850, 39);
-            TxtDiaChi.TabIndex = 8;
-            //
-            // label4
-            //
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label4.Location = new Point(1181, 163);
-            label4.Name = "label4";
-            label4.Size = new Size(126, 32);
-            label4.TabIndex = 7;
-            label4.Text = "Giới tính: ";
-            //
-            // TxtGioiTinh
-            //
-            TxtGioiTinh.Location = new Point(1181, 207);
-            TxtGioiTinh.Name = "TxtGioiTinh";
-            TxtGioiTinh.Size = new Size(850, 39);
-            TxtGioiTinh.TabIndex = 6;
-            //
-            // label5
-            //
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label5.Location = new Point(19, 163);
-            label5.Name = "label5";
-            label5.Size = new Size(135, 32);
-            label5.TabIndex = 5;
-            label5.Text = "Ngày sinh:";
-            //
-            // label2
-            //
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label2.Location = new Point(1181, 50);
-            label2.Name = "label2";
-            label2.Size = new Size(187, 32);
-            label2.TabIndex = 3;
-            label2.Text = "Tên nhân viên: ";
-            //
-            // TxtTenNhanVien
-            //
-            TxtTenNhanVien.Location = new Point(1181, 94);
-            TxtTenNhanVien.Name = "TxtTenNhanVien";
-            TxtTenNhanVien.Size = new Size(850, 39);
-            TxtTenNhanVien.TabIndex = 2;
-            //
-            // label1
-            //
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label1.Location = new Point(19, 50);
-            label1.Name = "label1";
-            label1.Size = new Size(183, 32);
-            label1.TabIndex = 1;
-            label1.Text = "Mã nhân viên: ";
-            //
-            // TxtMaNhanVien
-            //
-            TxtMaNhanVien.Location = new Point(19, 94);
-            TxtMaNhanVien.Name = "TxtMaNhanVien";
-            TxtMaNhanVien.Size = new Size(850, 39);
-            TxtMaNhanVien.TabIndex = 0;
-            //
-            // label3
-            //
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label3.Location = new Point(35, 24);
-            label3.Name = "label3";
-            label3.Size = new Size(325, 45);
-            label3.TabIndex = 1;
-            label3.Text = "Thêm nhân viên mới";
-            //
-            // contextMenuStrip1
-            //
-            contextMenuStrip1.ImageScalingSize = new Size(32, 32);
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(61, 4);
-            //
-            // ThemNhanVien
-            //
-            AutoScaleDimensions = new SizeF(13F, 32F);
-            AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(label3);
-            Controls.Add(groupBox1);
+
+            // =========================================
+            // USERCONTROL
+            // =========================================
             Name = "ThemNhanVien";
             Size = new Size(2088, 1627);
+            BackColor = background;
+            AutoScaleMode = AutoScaleMode.None;
+            Font = new Font("Segoe UI", 11F);
+
+            // =========================================
+            // LAYOUT TỔNG THỂ
+            // =========================================
+            TableLayoutPanel mainLayout =
+                new TableLayoutPanel
+                {
+                    Dock = DockStyle.Fill,
+                    ColumnCount = 1,
+                    RowCount = 2,
+                    Padding = new Padding(28),
+                    BackColor = background
+                };
+
+            mainLayout.ColumnStyles.Add(
+                new ColumnStyle(SizeType.Percent, 100F));
+
+            mainLayout.RowStyles.Add(
+                new RowStyle(SizeType.Absolute, 115F));
+
+            mainLayout.RowStyles.Add(
+                new RowStyle(SizeType.Percent, 100F));
+
+            // =========================================
+            // HEADER
+            // =========================================
+            Panel headerPanel = new Panel
+            {
+                Dock = DockStyle.Fill,
+                BackColor = background
+            };
+
+            label3.Text = "THÊM NHÂN VIÊN MỚI";
+            label3.Font = new Font(
+                "Segoe UI", 22F, FontStyle.Bold);
+
+            label3.ForeColor = navy;
+            label3.Dock = DockStyle.Top;
+            label3.Height = 76;
+            label3.TextAlign =
+                ContentAlignment.MiddleLeft;
+
+            Label subtitle = new Label
+            {
+                Text = "Nhập thông tin để tạo hồ sơ nhân viên",
+                Font = new Font("Segoe UI", 10F),
+                ForeColor = Color.DimGray,
+                Dock = DockStyle.Fill,
+                TextAlign = ContentAlignment.MiddleLeft
+            };
+
+            headerPanel.Controls.Add(subtitle);
+            headerPanel.Controls.Add(label3);
+
+            // =========================================
+            // GROUPBOX
+            // =========================================
+            groupBox1.Text = "Thông tin nhân viên";
+            groupBox1.Name = "groupBox1";
+            groupBox1.Font = new Font(
+                "Segoe UI", 12F, FontStyle.Bold);
+
+            groupBox1.ForeColor = navy;
+            groupBox1.Dock = DockStyle.Fill;
+
+            groupBox1.Margin =
+                new Padding(0, 4, 0, 0);
+
+            groupBox1.Padding =
+                new Padding(22, 54, 22, 24);
+
+            groupBox1.BackColor = Color.White;
+
+            // =========================================
+            // FORM 2 CỘT, 7 HÀNG
+            // =========================================
+            TableLayoutPanel fieldsLayout =
+                new TableLayoutPanel
+                {
+                    Dock = DockStyle.Fill,
+                    ColumnCount = 2,
+                    RowCount = 7,
+                    BackColor = Color.White,
+                    Margin = new Padding(0),
+                    Padding = new Padding(8)
+                };
+
+            fieldsLayout.ColumnStyles.Add(
+                new ColumnStyle(SizeType.Percent, 50F));
+
+            fieldsLayout.ColumnStyles.Add(
+                new ColumnStyle(SizeType.Percent, 50F));
+
+            for (int i = 0; i < 7; i++)
+            {
+                fieldsLayout.RowStyles.Add(
+                    new RowStyle(
+                        SizeType.Percent,
+                        100F / 7F
+                    )
+                );
+            }
+
+            // =========================================
+            // CẤU HÌNH CÁC CONTROL
+            // =========================================
+            TextBox[] textBoxes =
+            {
+        TxtMaNhanVien,
+        TxtTenNhanVien,
+        TxtDiaChi,
+        TxtSoDienThoai,
+        TxtEmail,
+        TxtCMND_CCCD
+    };
+
+            foreach (TextBox txt in textBoxes)
+            {
+                txt.Font = new Font("Segoe UI", 12F);
+                txt.BorderStyle = BorderStyle.FixedSingle;
+                txt.BackColor = Color.FromArgb(250, 252, 255);
+            }
+
+            ComboBox[] comboBoxes =
+            {
+        CbxGioiTinh,
+        CbxTrangThaiLamViec,
+        CbxPhongBan,
+        CbxChucVu,
+        CbxTrinhDo
+    };
+
+            foreach (ComboBox cbx in comboBoxes)
+            {
+                cbx.Font = new Font("Segoe UI", 12F);
+                cbx.DropDownStyle = ComboBoxStyle.DropDownList;
+                cbx.FlatStyle = FlatStyle.Flat;
+                cbx.BackColor = Color.FromArgb(250, 252, 255);
+            }
+
+            CbxGioiTinh.Items.AddRange(
+                new object[] { "Nam", "Nữ" });
+
+            CbxTrangThaiLamViec.Items.AddRange(
+                new object[]
+                {
+            "Đang làm việc",
+            "Thử việc",
+            "Tạm nghỉ",
+            "Nghỉ việc"
+                });
+
+            DtpNgaySinh.Format =
+                DateTimePickerFormat.Custom;
+
+            DtpNgaySinh.CustomFormat = "dd/MM/yyyy";
+            DtpNgaySinh.Font =
+                new Font("Segoe UI", 12F);
+
+            DtpNgayVaoLam.Format =
+                DateTimePickerFormat.Custom;
+
+            DtpNgayVaoLam.CustomFormat = "dd/MM/yyyy";
+            DtpNgayVaoLam.Font =
+                new Font("Segoe UI", 12F);
+
+            // =========================================
+            // HÀNG 1: MÃ / TÊN
+            // =========================================
+            AddField(
+                fieldsLayout,
+                label1,
+                "Mã nhân viên",
+                TxtMaNhanVien,
+                0, 0
+            );
+
+            AddField(
+                fieldsLayout,
+                label2,
+                "Họ và tên",
+                TxtTenNhanVien,
+                1, 0
+            );
+
+            // =========================================
+            // HÀNG 2: NGÀY SINH / GIỚI TÍNH
+            // =========================================
+            AddField(
+                fieldsLayout,
+                label5,
+                "Ngày sinh",
+                DtpNgaySinh,
+                0, 1
+            );
+
+            AddField(
+                fieldsLayout,
+                label4,
+                "Giới tính",
+                CbxGioiTinh,
+                1, 1
+            );
+
+            // =========================================
+            // HÀNG 3: ĐỊA CHỈ / ĐIỆN THOẠI
+            // =========================================
+            AddField(
+                fieldsLayout,
+                label9,
+                "Địa chỉ",
+                TxtDiaChi,
+                0, 2
+            );
+
+            AddField(
+                fieldsLayout,
+                label8,
+                "Số điện thoại",
+                TxtSoDienThoai,
+                1, 2
+            );
+
+            // =========================================
+            // HÀNG 4: EMAIL / CCCD
+            // =========================================
+            AddField(
+                fieldsLayout,
+                label7,
+                "Email",
+                TxtEmail,
+                0, 3
+            );
+
+            AddField(
+                fieldsLayout,
+                label6,
+                "CMND / CCCD",
+                TxtCMND_CCCD,
+                1, 3
+            );
+
+            // =========================================
+            // HÀNG 5: NGÀY VÀO / TRẠNG THÁI
+            // =========================================
+            AddField(
+                fieldsLayout,
+                label13,
+                "Ngày vào làm",
+                DtpNgayVaoLam,
+                0, 4
+            );
+
+            AddField(
+                fieldsLayout,
+                label18,
+                "Trạng thái làm việc",
+                CbxTrangThaiLamViec,
+                1, 4
+            );
+
+            // =========================================
+            // HÀNG 6: PHÒNG BAN / CHỨC VỤ
+            // =========================================
+            AddField(
+                fieldsLayout,
+                label11,
+                "Phòng ban",
+                CbxPhongBan,
+                0, 5
+            );
+
+            AddField(
+                fieldsLayout,
+                label10,
+                "Chức vụ",
+                CbxChucVu,
+                1, 5
+            );
+
+            // =========================================
+            // HÀNG 7: TRÌNH ĐỘ / NÚT THÊM
+            // =========================================
+            AddField(
+                fieldsLayout,
+                label14,
+                "Trình độ",
+                CbxTrinhDo,
+                0, 6
+            );
+
+            Panel buttonContainer = new Panel
+            {
+                Dock = DockStyle.Fill,
+                Padding = new Padding(20, 60, 20, 20)
+            };
+
+            BtnThemNhanVien.Name = "BtnThemNhanVien";
+            BtnThemNhanVien.Text = "＋  THÊM NHÂN VIÊN";
+
+            BtnThemNhanVien.Dock = DockStyle.Top;
+            BtnThemNhanVien.Height = 72;
+
+            BtnThemNhanVien.BackColor = blue;
+            BtnThemNhanVien.ForeColor = Color.White;
+
+            BtnThemNhanVien.FlatStyle = FlatStyle.Flat;
+            BtnThemNhanVien.FlatAppearance.BorderSize = 0;
+
+            BtnThemNhanVien.Font = new Font(
+                "Segoe UI", 12F, FontStyle.Bold);
+
+            BtnThemNhanVien.Cursor = Cursors.Hand;
+
+            BtnThemNhanVien.Click += BtnThemNhanVien_Click;
+
+            buttonContainer.Controls.Add(BtnThemNhanVien);
+
+            fieldsLayout.Controls.Add(
+                buttonContainer, 1, 6);
+
+            // =========================================
+            // HOÀN THÀNH BỐ CỤC
+            // =========================================
+            groupBox1.Controls.Add(fieldsLayout);
+
+            mainLayout.Controls.Add(headerPanel, 0, 0);
+            mainLayout.Controls.Add(groupBox1, 0, 1);
+
+            Controls.Add(mainLayout);
+
+            contextMenuStrip1.ImageScalingSize =
+                new Size(32, 32);
+
+            // Giữ sự kiện Load cũ
             Load += ThemNhanVien_Load;
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+
             ResumeLayout(false);
-            PerformLayout();
         }
+
+        // =============================================
+        // HÀM HỖ TRỢ THÊM Ô THÔNG TIN
+        // Đặt bên ngoài InitializeComponent()
+        // nhưng vẫn nằm trong class ThemNhanVien
+        // =============================================
+        private void AddField(
+            TableLayoutPanel parent,
+            Label label,
+            string labelText,
+            Control input,
+            int column,
+            int row)
+        {
+            Panel fieldPanel = new Panel
+            {
+                Dock = DockStyle.Fill,
+                Margin = new Padding(8),
+                Padding = new Padding(16, 14, 16, 8),
+                BackColor = Color.White
+            };
+
+            TableLayoutPanel fieldLayout =
+                new TableLayoutPanel
+                {
+                    Dock = DockStyle.Fill,
+                    ColumnCount = 1,
+                    RowCount = 2,
+                    Margin = new Padding(0)
+                };
+
+            fieldLayout.ColumnStyles.Add(
+                new ColumnStyle(SizeType.Percent, 100F));
+
+            fieldLayout.RowStyles.Add(
+                new RowStyle(SizeType.Absolute, 48F));
+
+            fieldLayout.RowStyles.Add(
+                new RowStyle(SizeType.Absolute, 65F));
+
+            label.Text = labelText;
+            label.Dock = DockStyle.Fill;
+            label.Font = new Font(
+                "Segoe UI", 11F, FontStyle.Bold);
+
+            label.ForeColor =
+                Color.FromArgb(55, 65, 81);
+
+            label.TextAlign = ContentAlignment.MiddleLeft;
+
+            input.Dock = DockStyle.Fill;
+            input.Margin = new Padding(0, 4, 0, 4);
+
+            fieldLayout.Controls.Add(label, 0, 0);
+            fieldLayout.Controls.Add(input, 0, 1);
+
+            fieldPanel.Controls.Add(fieldLayout);
+            parent.Controls.Add(fieldPanel, column, row);
+        }
+
 
         #endregion
 
@@ -377,7 +494,7 @@ namespace QuanLyNhanSu.usercontrol
         private Button BtnThemNhanVien;
         private Label label10;
         private Label label11;
-        private TextBox TxtTrangThaiLamVien;
+        private ComboBox CbxTrangThaiLamViec;
         private Label label13;
         private Label label6;
         private TextBox TxtCMND_CCCD;
@@ -388,7 +505,7 @@ namespace QuanLyNhanSu.usercontrol
         private Label label9;
         private TextBox TxtDiaChi;
         private Label label4;
-        private TextBox TxtGioiTinh;
+        private ComboBox CbxGioiTinh;
         private Label label5;
         private Label label3;
         private Label label18;

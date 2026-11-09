@@ -1,13 +1,13 @@
-namespace QuanLyNhanSu.usercontrol
+﻿namespace QuanLyNhanSu.usercontrol
 {
     partial class QuanLyTaiKhoan
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -22,8 +22,8 @@ namespace QuanLyNhanSu.usercontrol
 
         #region Component Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
@@ -47,9 +47,9 @@ namespace QuanLyNhanSu.usercontrol
             ((System.ComponentModel.ISupportInitialize)dgvAccounts).BeginInit();
             grpInput.SuspendLayout();
             SuspendLayout();
-            //
+            // 
             // lblTitle
-            //
+            // 
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitle.ForeColor = Color.FromArgb(0, 71, 160);
@@ -59,9 +59,9 @@ namespace QuanLyNhanSu.usercontrol
             lblTitle.Size = new Size(1097, 65);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "QUẢN LÝ THÔNG TIN TÀI KHOẢN ĐĂNG NHẬP";
-            //
+            // 
             // dgvAccounts
-            //
+            // 
             dgvAccounts.AllowUserToAddRows = false;
             dgvAccounts.AllowUserToDeleteRows = false;
             dgvAccounts.BackgroundColor = Color.White;
@@ -85,9 +85,9 @@ namespace QuanLyNhanSu.usercontrol
             dgvAccounts.Size = new Size(812, 800);
             dgvAccounts.TabIndex = 1;
             dgvAccounts.CellClick += DgvAccounts_CellClick; // <-- Thêm sự kiện CellClick giả định
-            //
+            // 
             // grpInput
-            //
+            // 
             grpInput.BackColor = Color.WhiteSmoke;
             grpInput.Controls.Add(btnReset);
             grpInput.Controls.Add(btnXoa);
@@ -110,9 +110,9 @@ namespace QuanLyNhanSu.usercontrol
             grpInput.TabIndex = 2;
             grpInput.TabStop = false;
             grpInput.Text = "Thông tin Tài khoản";
-            //
+            // 
             // btnReset
-            //
+            // 
             btnReset.BackColor = Color.FromArgb(108, 117, 125);
             btnReset.Cursor = Cursors.Hand;
             btnReset.FlatAppearance.BorderSize = 0;
@@ -127,9 +127,9 @@ namespace QuanLyNhanSu.usercontrol
             btnReset.Text = "🔄 Làm mới / Reset";
             btnReset.UseVisualStyleBackColor = false;
             btnReset.Click += BtnReset_Click;
-            //
+            // 
             // btnXoa
-            //
+            // 
             btnXoa.BackColor = Color.FromArgb(220, 53, 69);
             btnXoa.Cursor = Cursors.Hand;
             btnXoa.FlatAppearance.BorderSize = 0;
@@ -144,9 +144,9 @@ namespace QuanLyNhanSu.usercontrol
             btnXoa.Text = "🗑️ Xóa Tài khoản";
             btnXoa.UseVisualStyleBackColor = false;
             btnXoa.Click += BtnXoa_Click;
-            //
+            // 
             // btnSua
-            //
+            // 
             btnSua.BackColor = Color.FromArgb(255, 165, 0);
             btnSua.Cursor = Cursors.Hand;
             btnSua.FlatAppearance.BorderSize = 0;
@@ -161,9 +161,9 @@ namespace QuanLyNhanSu.usercontrol
             btnSua.Text = "📝 Cập nhật";
             btnSua.UseVisualStyleBackColor = false;
             btnSua.Click += BtnSua_Click;
-            //
+            // 
             // btnThem
-            //
+            // 
             btnThem.BackColor = Color.FromArgb(0, 150, 136);
             btnThem.Cursor = Cursors.Hand;
             btnThem.FlatAppearance.BorderSize = 0;
@@ -178,9 +178,9 @@ namespace QuanLyNhanSu.usercontrol
             btnThem.Text = "➕ Thêm Tài khoản";
             btnThem.UseVisualStyleBackColor = false;
             btnThem.Click += BtnThem_Click;
-            //
+            // 
             // cmbRole
-            //
+            // 
             cmbRole.Font = new Font("Segoe UI", 10F);
             cmbRole.FormattingEnabled = true;
             cmbRole.Items.AddRange(new object[] { "Admin", "Trưởng phòng", "Kế toán", "Nhân viên" });
@@ -190,9 +190,9 @@ namespace QuanLyNhanSu.usercontrol
             cmbRole.Size = new Size(322, 45);
             cmbRole.TabIndex = 7;
             cmbRole.Text = "Nhân viên";
-            //
+            // 
             // lblRole
-            //
+            // 
             lblRole.AutoSize = true;
             lblRole.Font = new Font("Segoe UI", 10F);
             lblRole.Location = new Point(32, 326);
@@ -201,9 +201,9 @@ namespace QuanLyNhanSu.usercontrol
             lblRole.Size = new Size(151, 37);
             lblRole.TabIndex = 6;
             lblRole.Text = "Quyền hạn:";
-            //
+            // 
             // txtPassword
-            //
+            // 
             txtPassword.Font = new Font("Segoe UI", 10F);
             txtPassword.Location = new Point(211, 240);
             txtPassword.Margin = new Padding(5, 6, 5, 6);
@@ -211,9 +211,9 @@ namespace QuanLyNhanSu.usercontrol
             txtPassword.PasswordChar = '●';
             txtPassword.Size = new Size(322, 43);
             txtPassword.TabIndex = 5;
-            //
+            // 
             // lblPassword
-            //
+            // 
             lblPassword.AutoSize = true;
             lblPassword.Font = new Font("Segoe UI", 10F);
             lblPassword.Location = new Point(32, 246);
@@ -222,18 +222,18 @@ namespace QuanLyNhanSu.usercontrol
             lblPassword.Size = new Size(134, 37);
             lblPassword.TabIndex = 4;
             lblPassword.Text = "Mật khẩu:";
-            //
+            // 
             // txtUsername
-            //
+            // 
             txtUsername.Font = new Font("Segoe UI", 10F);
             txtUsername.Location = new Point(211, 160);
             txtUsername.Margin = new Padding(5, 6, 5, 6);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(322, 43);
             txtUsername.TabIndex = 3;
-            //
+            // 
             // lblUsername
-            //
+            // 
             lblUsername.AutoSize = true;
             lblUsername.Font = new Font("Segoe UI", 10F);
             lblUsername.Location = new Point(32, 166);
@@ -242,9 +242,9 @@ namespace QuanLyNhanSu.usercontrol
             lblUsername.Size = new Size(198, 37);
             lblUsername.TabIndex = 2;
             lblUsername.Text = "Tên đăng nhập:";
-            //
+            // 
             // cmbNhanVienID
-            //
+            // 
             cmbNhanVienID.Font = new Font("Segoe UI", 10F);
             cmbNhanVienID.FormattingEnabled = true;
             cmbNhanVienID.Location = new Point(211, 80);
@@ -252,9 +252,9 @@ namespace QuanLyNhanSu.usercontrol
             cmbNhanVienID.Name = "cmbNhanVienID";
             cmbNhanVienID.Size = new Size(322, 45);
             cmbNhanVienID.TabIndex = 1;
-            //
+            // 
             // lblNhanVienID
-            //
+            // 
             lblNhanVienID.AutoSize = true;
             lblNhanVienID.Font = new Font("Segoe UI", 10F);
             lblNhanVienID.Location = new Point(32, 86);
@@ -263,9 +263,9 @@ namespace QuanLyNhanSu.usercontrol
             lblNhanVienID.Size = new Size(93, 37);
             lblNhanVienID.TabIndex = 0;
             lblNhanVienID.Text = "ID NV:";
-            //
+            // 
             // QuanLyTaiKhoan
-            //
+            // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
@@ -281,6 +281,7 @@ namespace QuanLyNhanSu.usercontrol
             grpInput.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
+            Load += QuanLyTaiKhoan_Load;
         }
 
         #endregion

@@ -1,4 +1,4 @@
-using Microsoft.Data.SqlClient;
+﻿using Microsoft.Data.SqlClient;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -124,7 +124,7 @@ namespace QuanLyNhanSu
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                string checkQuery = @"SELECT COUNT(*) FROM NgayCongThang
+                string checkQuery = @"SELECT COUNT(*) FROM NgayCongThang 
                                       WHERE NhanVienID=@NhanVienID AND Thang=@Thang AND Nam=@Nam";
                 using (SqlCommand cmdCheck = new SqlCommand(checkQuery, conn))
                 {

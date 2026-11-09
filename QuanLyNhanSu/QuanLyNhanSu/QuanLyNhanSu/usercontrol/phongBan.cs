@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -64,7 +64,7 @@ namespace QuanLyNhanSu.usercontrol
                     MessageBox.Show("Thêm phòng ban thành công!");
                 }
             }
-            catch(Exception ex)
+            catch(Exception ex) 
             {
                 MessageBox.Show("Lỗi khi thêm phòng ban: " + ex.Message);
 
@@ -103,9 +103,9 @@ namespace QuanLyNhanSu.usercontrol
                 MessageBox.Show("Lỗi khi sửa phòng ban: " + ex.Message);
 
             }
-            finally
-            {
-                ketNoi.Close();
+            finally 
+            { 
+                ketNoi.Close(); 
             }
         }
 

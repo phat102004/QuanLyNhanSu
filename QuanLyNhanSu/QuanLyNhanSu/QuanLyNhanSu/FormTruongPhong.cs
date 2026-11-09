@@ -169,13 +169,14 @@ namespace QuanLyNhanSu
                 switch (btn.Name)
                 {
                     case "btnHoSoCaNhan":
-                        uc = new QuanLyNhanVien(this.userID);
+                        LoadControlToPanel(new QuanLyNhanSu.usercontrol.QuanLyNhanVien(this.userID));
                         break;
                     case "btnLuongCaNhan":
-                        uc = new BangLuong(this.userID);
+                        LoadControlToPanel(new QuanLyNhanSu.usercontrol.LuongCaNhan(this.userID)
+                        );
                         break;
                     case "btnCongViecCaNhan":
-                        uc = new BaoCaoPhanCong(this.userID);
+                        LoadControlToPanel(new QuanLyNhanSu.usercontrol.CongViecCaNhan(this.userID));
                         break;
                     case "btnChamCong":
                         FormChamCong chamCongForm = new FormChamCong(this.userID, this.userName);

@@ -54,59 +54,62 @@ namespace QuanLyNhanSu.usercontrol
             LoadTaiKhoanData();
         }
 
+        // Chỉ nạp đúng một nhân viên được chọn, không tải toàn bộ nhân viên.
         private void LoadNhanVienComboBox()
         {
-            string sql = @"
-                SELECT NhanVienID, HoTen
-                FROM NhanVien";
+            DataTable table = new DataTable();
+            table.Columns.Add("NhanVienID", typeof(object));
+            table.Columns.Add("HoTen", typeof(string));
+            cmbNhanVienID.DataSource = table;
+            cmbNhanVienID.DisplayMember = "HoTen";
+            cmbNhanVienID.ValueMember = "NhanVienID";
+            cmbNhanVienID.SelectedIndex = -1;
+        }
 
+        private void SelectEmployeeById(object employeeId)
+        {
+            const string sql = @"SELECT NhanVienID, HoTen
+                                 FROM NhanVien WHERE NhanVienID = @ID";
+            using SqlConnection conn = new SqlConnection(chuoiKN);
+            using SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@ID", employeeId);
+            DataTable table = new DataTable();
+            using SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(table);
+            if (table.Rows.Count == 0)
+            {
+                MessageBox.Show("Không tìm thấy nhân viên được chọn.");
+                return;
+            }
+            cmbNhanVienID.DataSource = table;
+            cmbNhanVienID.DisplayMember = "HoTen";
+            cmbNhanVienID.ValueMember = "NhanVienID";
+            cmbNhanVienID.SelectedIndex = 0;
+        }
+
+        private void BtnChonNhanVien_Click(object? sender, EventArgs e)
+        {
+            using ChonNhanVienForm form = new ChonNhanVienForm(chuoiKN);
+            if (form.ShowDialog(this) != DialogResult.OK ||
+                form.SelectedEmployeeId == null) return;
             try
             {
-                if (ketNoi.State != ConnectionState.Open)
-                {
-                    ketNoi.Open();
-                }
-
-                docGhi = new SqlDataAdapter(
-                    sql,
-                    ketNoi
-                );
-
-                duLieu = new DataSet();
-
-                docGhi.Fill(duLieu);
-
-                cmbNhanVienID.DataSource =
-                    duLieu.Tables[0];
-
-                cmbNhanVienID.DisplayMember =
-                    "HoTen";
-
-                cmbNhanVienID.ValueMember =
-                    "NhanVienID";
-
-                cmbNhanVienID.SelectedIndex = -1;
-
-                ketNoi.Close();
+                SelectEmployeeById(form.SelectedEmployeeId);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(
-                    "Lỗi khi tải danh sách nhân viên: " +
-                    ex.Message,
-                    "Lỗi",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
+                MessageBox.Show("Không thể chọn nhân viên: " + ex.Message);
             }
-            finally
-            {
-                if (ketNoi != null &&
-                    ketNoi.State == ConnectionState.Open)
-                {
-                    ketNoi.Close();
-                }
-            }
+        }
+
+        private bool EmployeeHasAccount(object employeeId)
+        {
+            using SqlConnection conn = new SqlConnection(chuoiKN);
+            using SqlCommand cmd = new SqlCommand(
+                "SELECT COUNT(*) FROM TaiKhoan WHERE NhanVienID = @ID", conn);
+            cmd.Parameters.AddWithValue("@ID", employeeId);
+            conn.Open();
+            return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
         }
 
         private void LoadQuyenComboBox()
@@ -297,8 +300,15 @@ namespace QuanLyNhanSu.usercontrol
             DataGridViewRow row =
                 dgvAccounts.Rows[e.RowIndex];
 
-            cmbNhanVienID.SelectedValue =
-                row.Cells["NhanVienID"].Value;
+            try
+            {
+                SelectEmployeeById(row.Cells["NhanVienID"].Value);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không thể tải nhân viên: " + ex.Message);
+                return;
+            }
 
             cmbRole.SelectedValue =
                 row.Cells["QuyenID"].Value;
@@ -368,6 +378,13 @@ namespace QuanLyNhanSu.usercontrol
 
             try
             {
+                if (EmployeeHasAccount(cmbNhanVienID.SelectedValue))
+                {
+                    MessageBox.Show("Nhân viên này đã có tài khoản đăng nhập!",
+                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 if (UsernameExists(
                     txtUsername.Text))
                 {
